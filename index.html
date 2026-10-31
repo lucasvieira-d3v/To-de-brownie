@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tô de Brownie - Completo e Responsivo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@500;600;700&display=swap');
+
+        :root {
+            --green: #0EA37A;
+            --pink: #F28BC9;
+            --yellow: #FEDB4D;
+            --cream: #FFFBEA;
+            --dark: #2B1B14;
+            --choco: #61361F;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* MOLDURA PRINCIPAL */
+        .site-canvas {
+            width: 100%;
+            max-width: 1400px;
+            background-color: var(--cream);
+            border: 3px solid var(--dark);
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 10px 10px 0px var(--dark);
+            position: relative;
+        }
+
+        h1, h2, h3, .badge, .btn-header, .btn-pink-hero, .btn-outline-hero {
+            font-family: 'Lilita One', cursive;
+            letter-spacing: 0.5px;
+        }
+
+        /* HEADER */
+        header {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px 0px 40px;
+            flex-wrap: wrap;
+        }
+
+        .logo-img {
+            width: 195px; 
+            transform: rotate(-4deg);
+            transition: transform 0.2s ease;
+            filter: drop-shadow(3px 3px 0px var(--dark));
+        }
+
+        .logo-img:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 30px;
+            border: 2px solid var(--dark);
+            box-shadow: 3px 3px 0px var(--dark);
+            background-color: var(--cream);
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--pink);
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px var(--dark);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            transition: transform 0.2s;
+        }
+
+        .icon-btn:hover { transform: scale(1.1); }
+
+        .cart-badge {
+            position: absolute;
+            top: -6px;
+            right: -8px;
+            background-color: var(--pink);
+            color: var(--dark);
+            font-family: 'Lilita One', cursive;
+            font-size: 0.75rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1.5px solid var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-header {
+            background-color: var(--pink);
+            color: var(--dark);
+            padding: 10px 22px;
+            border-radius: 30px;
+            border: 2px solid var(--dark);
+            text-decoration: none;
+            box-shadow: 3px 3px 0px var(--dark);
+            font-size: 1.05rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-header:hover { background-color: var(--yellow); }
+        .btn-header:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--dark); }
+
+        /* DETALHES DE FUNDO */
+        .bg-shape {
+            position: absolute;
+            z-index: 1; 
+            border: 3px solid var(--dark);
+        }
+
+        /* BOLA VERDE AJUSTADA PARA BAIXO (Para não cobrir o texto) */
+        .bg-green-blob {
+            background-color: var(--green);
+            width: 140px;
+            height: 140px;
+            border-radius: 43% 57% 33% 67% / 60% 45% 55% 40%;
+            bottom: -20px; /* <-- Puxado para baixo */
+            left: -20px;
+            transform: rotate(-15deg);
+        }
+
+        .bg-yellow-circle {
+            background-color: var(--yellow);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            top: 10px;
+            left: 48%;
+            box-shadow: 4px 4px 0px var(--dark);
+        }
+
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid var(--dark);
+            z-index: 1;
+        }
+        .dot-g { background-color: var(--green); }
+        .dot-y { background-color: var(--yellow); }
+        
+        .d1 { width: 14px; height: 14px; top: 90px; left: 45%; }
+        .d2 { width: 20px; height: 20px; bottom: 130px; left: 42%; }
+        .d3 { width: 12px; height: 12px; top: 20%; left: 2%; }
+
+        .choco-draw {
+            position: absolute;
+            z-index: 4; 
+            pointer-events: none;
+        }
+        .choco-draw rect, .choco-draw line {
+            stroke: var(--dark);
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .choco-draw .choco-fill {
+            fill: var(--choco);
+        }
+        
+        .choco-1 { top: 5%; left: 42%; transform: rotate(25deg); width: 35px; z-index: 1;}
+        .choco-2 { bottom: -10px; left: 15%; transform: rotate(-15deg); width: 40px; }
+        .choco-3 { top: 15%; right: 3%; transform: rotate(-35deg); width: 45px; z-index: 1; }
+        .choco-4 { bottom: 5%; left: -10px; transform: rotate(45deg); width: 50px; z-index: 1; }
+
+        /* HERO SECTION */
+        .hero-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 50px 60px 50px;
+            z-index: 5;
+        }
+
+        .hero-left {
+            max-width: 50%;
+            position: relative;
+            padding-left: 20px;
+            z-index: 5;
+            margin-top: -15px;
+        }
+
+        .hero-title {
+            font-size: 4.8rem;
+            line-height: 1.05;
+            color: var(--dark);
+            margin-bottom: 15px;
+            transform: rotate(-3deg);
+            position: relative;
+            z-index: 3;
+        }
+
+        .title-blob-wrapper {
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+        }
+
+        .blob-bg-yellow {
+            position: absolute;
+            top: -5px;
+            left: -15px;
+            width: 110%;
+            height: 110%;
+            background-color: var(--yellow);
+            border-radius: 40px 50px 30px 40px / 50px 40px 50px 30px;
+            z-index: -1;
+            transform: rotate(2deg);
+        }
+
+        .pill-pink {
+            background-color: var(--pink);
+            padding: 5px 25px;
+            border-radius: 40px;
+            display: inline-block;
+            transform: rotate(-2deg);
+            margin: 2px 0;
+        }
+
+        .pill-yellow {
+            background-color: var(--yellow);
+            padding: 5px 25px;
+            border-radius: 40px;
+            display: inline-block;
+            transform: rotate(3deg);
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #333;
+            max-width: 85%;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .btn-pink-hero {
+            background-color: var(--pink);
+            color: var(--dark);
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.15rem;
+            border: 2px solid var(--dark);
+            box-shadow: 3px 3px 0px var(--dark);
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        .btn-pink-hero:hover { 
+            transform: translate(2px, 2px); 
+            box-shadow: 1px 1px 0px var(--dark);
+        }
+
+        .btn-outline-hero {
+            background-color: var(--cream); 
+            color: var(--dark);
+            padding: 12px 28px; 
+            border-radius: 30px;
+            border: 2px solid var(--dark);
+            box-shadow: 3px 3px 0px var(--dark); 
+            text-decoration: none;
+            font-size: 1.15rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        .btn-outline-hero:hover { 
+            background-color: var(--yellow); 
+            transform: translate(2px, 2px); 
+            box-shadow: 1px 1px 0px var(--dark);
+        }
+
+        .confetti {
+            position: absolute;
+            background-color: var(--dark);
+            width: 4px;
+            height: 15px;
+            border-radius: 4px;
+        }
+        .c1 { top: 15px; left: -25px; transform: rotate(40deg); }
+        .c2 { top: 40px; left: -15px; transform: rotate(-30deg); width: 6px; height: 10px;}
+        .c3 { top: 90px; left: -20px; transform: rotate(15deg); }
+        .c4 { top: 70%; right: -20px; transform: rotate(-25deg); }
+        .c5 { top: 50%; right: -10px; transform: rotate(45deg); width: 5px; height: 12px; }
+
+        /* LADO DIREITO DA HERO */
+        .hero-right {
+            position: relative;
+            width: 48%; 
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            margin-top: -30px;
+        }
+
+        .blob-pink-bg {
+            position: absolute;
+            width: 125%;
+            height: 110%;
+            background-color: var(--pink);
+            border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+            z-index: 1;
+            top: -5%;
+            right: -10%;
+            transform: rotate(-10deg);
+        }
+
+        .blob-yellow-bg {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            background-color: var(--yellow);
+            border-radius: 50%;
+            z-index: 0;
+            bottom: -5%;
+            left: -5%;
+            opacity: 0.8;
+        }
+
+        .cookie-hero-img {
+            position: relative;
+            z-index: 2;
+            width: 95%;
+            height: 95%;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid var(--dark);
+            box-shadow: 6px 6px 0px var(--dark);
+            transform: rotate(2deg);
+        }
+
+        .green-seal-wrapper {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 150px;
+            height: 150px;
+            z-index: 6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(10deg);
+        }
+
+        .green-seal-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .green-seal-text {
+            position: relative;
+            z-index: 2;
+            color: #FFF;
+            text-align: center;
+            font-family: 'Lilita One', cursive;
+            font-size: 1.05rem;
+            line-height: 1.1;
+            margin-top: -5px;
+        }
+
+        .star-draw {
+            position: absolute;
+            z-index: 4;
+            pointer-events: none;
+        }
+        .star-draw path {
+            fill: #FFF;
+            stroke: var(--dark);
+            stroke-width: 5;
+            stroke-linejoin: round;
+        }
+        .s-top { top: -20px; left: 10%; width: 45px; transform: rotate(15deg); }
+        .s-mid { top: 50%; left: -40px; width: 35px; transform: rotate(-10deg); }
+
+        /* FAIXA ROSA DIVISÓRIA */
+        .pink-strip {
+            background-color: var(--pink);
+            border-top: 3.5px solid var(--dark);
+            border-bottom: 3.5px solid var(--dark);
+            padding: 16px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 7;
+        }
+
+        .pink-strip span {
+            font-family: 'Lilita One', cursive;
+            font-size: 1.4rem;
+            color: var(--dark);
+            text-shadow: 
+                -1.5px -1.5px 0 var(--cream),  
+                 1.5px -1.5px 0 var(--cream),
+                -1.5px  1.5px 0 var(--cream),
+                 1.5px  1.5px 0 var(--cream);
+            letter-spacing: 1px;
+        }
+
+        .strip-icon {
+            width: 24px;
+            height: 24px;
+            display: block;
+        }
+
+        /* SEÇÃO CARDÁPIO DO DIA */
+        .menu-section {
+            padding: 40px 50px 60px 50px;
+            background-color: var(--cream);
+            position: relative; 
+        }
+
+        .menu-bg-pink-blob {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background-color: var(--pink);
+            border: 3px solid var(--dark);
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            top: -60px;
+            right: -60px;
+            z-index: 1;
+            transform: rotate(35deg);
+        }
+
+        .menu-bg-green-blob {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: var(--green);
+            border: 3px solid var(--dark);
+            border-radius: 50%;
+            bottom: -30px;
+            left: -40px;
+            z-index: 1;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 3; 
+        }
+
+        .menu-title-area h2 {
+            font-size: 2.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Lilita One', cursive;
+        }
+
+        .sunburst-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .menu-title-area p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .btn-view-all {
+            background-color: var(--yellow);
+            color: var(--dark);
+            padding: 10px 24px;
+            border-radius: 25px;
+            border: 2px solid var(--dark);
+            text-decoration: none;
+            box-shadow: 3px 3px 0px var(--dark);
+            font-family: 'Lilita One', cursive;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-view-all:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px var(--dark);
+        }
+
+        /* GRID DE PRODUTOS */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+            position: relative;
+            z-index: 3; 
+        }
+
+        .product-card {
+            background-color: #FFF;
+            border: 2.5px solid var(--dark);
+            border-radius: 18px;
+            padding: 12px;
+            box-shadow: 4px 4px 0px var(--dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.2s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-thumbnail-box {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .card-thumbnail-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            padding: 3px 9px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            border: 1.5px solid var(--dark);
+            box-shadow: 2px 2px 0px var(--dark);
+            z-index: 2;
+            font-family: 'Lilita One', cursive;
+        }
+
+        .b-green { background-color: var(--green); color: #FFF; }
+        .b-pink { background-color: var(--pink); color: var(--dark); }
+        .b-yellow { background-color: var(--yellow); color: var(--dark); }
+        .b-red { background-color: #E63946; color: #FFF; }
+        .b-mustard { background-color: #E9A825; color: var(--dark); }
+
+        .product-info h3 {
+            font-size: 1.15rem;
+            margin-bottom: 6px;
+            color: var(--dark);
+            font-family: 'Lilita One', cursive;
+        }
+
+        .product-info p {
+            font-size: 0.85rem;
+            color: #555;
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lilita One', cursive;
+            font-size: 1.2rem;
+        }
+
+        .add-cart-btn {
+            background-color: var(--green);
+            color: #FFF;
+            border: 2px solid var(--dark);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px var(--dark);
+            transition: transform 0.1s;
+        }
+
+        .add-cart-btn:hover { transform: scale(1.08); }
+        .add-cart-btn:active { transform: scale(0.92); }
+
+
+        /* =========================================
+           REGRAS DE RESPONSIVIDADE (MOBILE & TABLET) 
+           ========================================= */
+        
+        @media (max-width: 1200px) {
+            .nav-links { display: none; } /* Oculta menu horizontal no tablet para não apertar */
+            .logo-img { width: 170px; }
+        }
+
+        @media (max-width: 1100px) {
+            .products-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero-title { font-size: 4.2rem; }
+        }
+
+        @media (max-width: 900px) {
+            .hero-section { 
+                flex-direction: column; 
+                padding: 20px 30px 40px 30px; 
+                text-align: center;
+            }
+            .hero-left, .hero-right { 
+                max-width: 100%; 
+                width: 100%; 
+                padding-left: 0; 
+                margin-top: 0;
+            }
+            .hero-buttons { 
+                justify-content: center; 
+            }
+            .hero-desc { 
+                margin: 0 auto 25px auto; 
+            }
+            .hero-right { 
+                height: 400px; 
+                margin-top: 40px; 
+            }
+            .title-blob-wrapper { 
+                margin-left: 0; 
+            }
+            /* Ajuste dos blobs decorativos para tablet */
+            .bg-green-blob { bottom: -30px; left: 0px; }
+            .bg-yellow-circle { top: -10px; left: 80%; }
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .site-canvas { border-radius: 20px; }
+            
+            header { 
+                flex-direction: column; 
+                padding: 20px; 
+                gap: 20px;
+            }
+            .logo-img { width: 150px; }
+            .header-actions { 
+                width: 100%; 
+                justify-content: center; 
+            }
+            
+            .hero-section { padding: 10px 20px 40px 20px; }
+            .hero-title { font-size: 3.2rem; }
+            
+            .hero-buttons { 
+                flex-direction: column; 
+                width: 100%; 
+            }
+            .btn-pink-hero, .btn-outline-hero { 
+                width: 100%; 
+                text-align: center; 
+            }
+            
+            .hero-right { height: 320px; }
+            .green-seal-wrapper { width: 110px; height: 110px; right: -5px; top: -10px; }
+            .green-seal-text { font-size: 0.8rem; }
+            
+            .pink-strip { padding: 12px 10px; gap: 15px; }
+            .pink-strip span { font-size: 1.1rem; }
+            .strip-icon { width: 18px; height: 18px; }
+
+            .menu-section { padding: 30px 20px; }
+            .menu-header { 
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center; 
+                gap: 15px;
+            }
+            .menu-title-area h2 { font-size: 2.2rem; justify-content: center; }
+            
+            /* Grid de produtos em 1 coluna no celular */
+            .products-grid { grid-template-columns: 1fr; }
+            
+            /* Esconde confetes pequenos no celular para limpar o visual */
+            .confetti, .star-draw { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="site-canvas">
+        
+        <!-- HEADER -->
+        <header>
+            <div class="logo-box">
+                <img src="Logo.png" alt="Tô de Brownie Logo" class="logo-img">
+            </div>
+
+            <nav class="nav-links">
+                <a href="#">Início</a>
+                <a href="#">Cardápio</a>
+                <a href="#">Encomendas</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Pesquisar">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+
+                <button class="icon-btn" aria-label="Carrinho de compras">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge">3</span>
+                </button>
+
+                <a href="#" class="btn-header">Quero meu cookie</a>
+            </div>
+        </header>
+
+        <!-- HERO SECTION PRINCIPAL -->
+        <section class="hero-section">
+            
+            <div class="bg-shape bg-green-blob"></div>
+            <div class="bg-shape bg-yellow-circle"></div>
+            
+            <div class="dot dot-g d1"></div>
+            <div class="dot dot-y d2"></div>
+            <div class="dot dot-g d3"></div>
+
+            <svg class="choco-draw choco-1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="8" width="32" height="48" rx="4" class="choco-fill" />
+                <line x1="16" y1="24" x2="48" y2="24" />
+                <line x1="16" y1="40" x2="48" y2="40" />
+                <line x1="32" y1="8" x2="32" y2="56" />
+            </svg>
+            
+            <svg class="choco-draw choco-2" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="8" width="32" height="48" rx="4" class="choco-fill" />
+                <line x1="16" y1="24" x2="48" y2="24" />
+                <line x1="16" y1="40" x2="48" y2="40" />
+                <line x1="32" y1="8" x2="32" y2="56" />
+            </svg>
+
+            <div class="hero-left">
+                <div class="confetti c1"></div>
+                <div class="confetti c2"></div>
+                <div class="confetti c3"></div>
+                <div class="confetti c4"></div>
+                <div class="confetti c5"></div>
+
+                <h1 class="hero-title">
+                    <span class="title-blob-wrapper">
+                        <span class="blob-bg-yellow"></span>
+                        Brownies
+                    </span>
+                    <br> e Cookies <br>
+                    <span class="pill-pink">que fazem</span> <br>
+                    <span class="pill-yellow">sorrir!</span>
+                </h1>
+                
+                <p class="hero-desc">Receitas artesanais, recheios irresistíveis e momentos que merecem um sabor especial.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#" class="btn-pink-hero">Ver cardápio →</a>
+                    <a href="#" class="btn-outline-hero">Fazer encomenda</a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="blob-yellow-bg"></div>
+                <div class="blob-pink-bg"></div>
+
+                <svg class="star-draw s-top" viewBox="0 0 100 100">
+                    <path d="M50 5 C50 30 70 50 95 50 C70 50 50 70 50 95 C50 70 30 50 5 50 C30 50 50 30 50 5 Z"/>
+                </svg>
+                <svg class="star-draw s-mid" viewBox="0 0 100 100">
+                    <path d="M50 5 C50 30 70 50 95 50 C70 50 50 70 50 95 C50 70 30 50 5 50 C30 50 50 30 50 5 Z"/>
+                </svg>
+
+                <div class="green-seal-wrapper">
+                    <svg class="green-seal-bg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="var(--green)" d="M43.5,-71.8C55.9,-61.8,65.3,-48.3,73.1,-33.9C80.8,-19.5,86.9,-4.2,85.5,10.6C84.2,25.3,75.4,39.5,64.2,50.7C53,62,39.4,70.3,24.6,75.3C9.9,80.3,-6,82,-21.2,78.5C-36.5,75,-51,66.4,-61.9,54.4C-72.7,42.4,-79.8,27.1,-83.1,11C-86.4,-5.2,-85.9,-22.2,-78.3,-36C-70.7,-49.7,-56.1,-60.1,-41.7,-68.8C-27.4,-77.5,-13.7,-84.4,1.4,-86.3C16.5,-88.2,33,-85.1,43.5,-71.8Z" transform="translate(100 100)" />
+                    </svg>
+                    <div class="green-seal-text">
+                        mais<br>que doces,<br>são bons<br>momentos!<br><span style="font-size: 0.8rem;">♡</span>
+                    </div>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=800&q=80" alt="Brownies derretendo" class="cookie-hero-img">
+            </div>
+        </section>
+
+        <!-- FAIXA ROSA DIVISÓRIA -->
+        <div class="pink-strip">
+            <svg class="strip-icon" viewBox="0 0 24 24" fill="var(--cream)" stroke="var(--dark)" stroke-width="2.5" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span>COOKIES</span>
+            
+            <svg class="strip-icon" viewBox="0 0 100 100"><path d="M50 5 C50 30 70 50 95 50 C70 50 50 70 50 95 C50 70 30 50 5 50 C30 50 50 30 50 5 Z" fill="var(--yellow)" stroke="var(--dark)" stroke-width="12" stroke-linejoin="round"/></svg>
+            <span>BROWNIES</span>
+
+            <svg class="strip-icon" viewBox="0 0 100 100"><path d="M50 5 C50 30 70 50 95 50 C70 50 50 70 50 95 C50 70 30 50 5 50 C30 50 50 30 50 5 Z" fill="var(--green)" stroke="var(--dark)" stroke-width="12" stroke-linejoin="round"/></svg>
+            <span>RECHEIOS</span>
+
+            <svg class="strip-icon" viewBox="0 0 100 100"><path d="M50 5 C50 30 70 50 95 50 C70 50 50 70 50 95 C50 70 30 50 5 50 C30 50 50 30 50 5 Z" fill="var(--cream)" stroke="var(--dark)" stroke-width="12" stroke-linejoin="round"/></svg>
+            <span>FELICIDADE</span>
+
+            <svg class="strip-icon" viewBox="0 0 100 100"><path d="M50 5 C50 30 70 50 95 50 C70 50 50 70 50 95 C50 70 30 50 5 50 C30 50 50 30 50 5 Z" fill="var(--yellow)" stroke="var(--dark)" stroke-width="12" stroke-linejoin="round"/></svg>
+            <span>MOMENTOS</span>
+
+            <svg class="strip-icon" viewBox="0 0 100 100"><path d="M50 5 C50 30 70 50 95 50 C70 50 50 70 50 95 C50 70 30 50 5 50 C30 50 50 30 50 5 Z" fill="var(--green)" stroke="var(--dark)" stroke-width="12" stroke-linejoin="round"/></svg>
+            <span>FEITOS COM AMOR</span>
+
+            <svg class="strip-icon" viewBox="0 0 24 24" fill="var(--cream)" stroke="var(--dark)" stroke-width="2.5" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </div>
+
+        <!-- SEÇÃO: CARDÁPIO DO DIA -->
+        <section class="menu-section">
+            
+            <div class="menu-bg-pink-blob"></div>
+            <div class="menu-bg-green-blob"></div>
+
+            <svg class="choco-draw choco-3" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="8" width="32" height="48" rx="4" class="choco-fill" />
+                <line x1="16" y1="24" x2="48" y2="24" />
+                <line x1="16" y1="40" x2="48" y2="40" />
+                <line x1="32" y1="8" x2="32" y2="56" />
+            </svg>
+
+            <svg class="choco-draw choco-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="8" width="32" height="48" rx="4" class="choco-fill" />
+                <line x1="16" y1="24" x2="48" y2="24" />
+                <line x1="16" y1="40" x2="48" y2="40" />
+                <line x1="32" y1="8" x2="32" y2="56" />
+            </svg>
+            
+            <div class="menu-header">
+                <div class="menu-title-area">
+                    <h2>
+                        Cardápio do dia
+                        <svg class="sunburst-icon" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="3" stroke-linecap="round">
+                            <line x1="12" y1="2" x2="12" y2="6"></line>
+                            <line x1="12" y1="18" x2="12" y2="22"></line>
+                            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                            <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                            <line x1="2" y1="12" x2="6" y2="12"></line>
+                            <line x1="18" y1="12" x2="22" y2="12"></line>
+                        </svg>
+                    </h2>
+                    <p>Cookies fresquinhos, feitos com ingredientes selecionados.</p>
+                </div>
+                <a href="#" class="btn-view-all">Ver todos →</a>
+            </div>
+
+            <div class="products-grid">
+                <!-- Card 1 -->
+                <div class="product-card">
+                    <div>
+                        <div class="card-thumbnail-box">
+                            <span class="product-badge b-green">Mais vendido</span>
+                            <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80" alt="Cookie Clássico">
+                        </div>
+                        <div class="product-info">
+                            <h3>Cookie Clássico</h3>
+                            <p>Massa de baunilha com gotas de chocolate belga.</p>
+                        </div>
+                    </div>
+                    <div class="product-bottom">
+                        <span>R$ 12,90</span>
+                        <button class="add-cart-btn" aria-label="Adicionar ao carrinho">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="product-card">
+                    <div>
+                        <div class="card-thumbnail-box">
+                            <span class="product-badge b-pink">Novidade</span>
+                            <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=400&q=80" alt="Cookie de Nutella">
+                        </div>
+                        <div class="product-info">
+                            <h3>Cookie de Nutella</h3>
+                            <p>Recheio generoso, derrete na boca.</p>
+                        </div>
+                    </div>
+                    <div class="product-bottom">
+                        <span>R$ 14,90</span>
+                        <button class="add-cart-btn" aria-label="Adicionar ao carrinho">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="product-card">
+                    <div>
+                        <div class="card-thumbnail-box">
+                            <span class="product-badge b-yellow">Especial</span>
+                            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80" alt="Cookie de Pistache">
+                        </div>
+                        <div class="product-info">
+                            <h3>Cookie de Pistache</h3>
+                            <p>Recheio cremoso de pistache e toque de chocolate branco.</p>
+                        </div>
+                    </div>
+                    <div class="product-bottom">
+                        <span>R$ 15,90</span>
+                        <button class="add-cart-btn" aria-label="Adicionar ao carrinho">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product-card">
+                    <div>
+                        <div class="card-thumbnail-box">
+                            <span class="product-badge b-red">Edição limitada</span>
+                            <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=400&q=80" alt="Cookie Red Velvet">
+                        </div>
+                        <div class="product-info">
+                            <h3>Cookie Red Velvet</h3>
+                            <p>Massa vermelha com chocolate branco.</p>
+                        </div>
+                    </div>
+                    <div class="product-bottom">
+                        <span>R$ 14,90</span>
+                        <button class="add-cart-btn" aria-label="Adicionar ao carrinho">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="product-card">
+                    <div>
+                        <div class="card-thumbnail-box">
+                            <span class="product-badge b-mustard">Sabor da Semana</span>
+                            <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=400&q=80" alt="Cookie de Caramelo">
+                        </div>
+                        <div class="product-info">
+                            <h3>Cookie de Caramelo</h3>
+                            <p>Caramelo artesanal e gotas de chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-bottom">
+                        <span>R$ 14,90</span>
+                        <button class="add-cart-btn" aria-label="Adicionar ao carrinho">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
