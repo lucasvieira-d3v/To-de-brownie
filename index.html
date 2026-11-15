@@ -48,16 +48,67 @@
         }
 
         /* HEADER */
-        header { position: relative; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 15px 40px 0px 40px; flex-wrap: wrap; gap: 12px; }
-        .logo-img { width: 195px; transform: rotate(-4deg); transition: transform 0.2s ease; filter: drop-shadow(3px 3px 0px var(--dark)); display: block; }
+        header {
+            position: relative;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px 0px 40px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .logo-img {
+            width: 195px;
+            transform: rotate(-4deg);
+            transition: transform 0.2s ease;
+            filter: drop-shadow(3px 3px 0px var(--dark));
+            display: block;
+        }
         .logo-img:hover { transform: rotate(0deg) scale(1.05); }
 
-        .nav-links { display: flex; gap: 12px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-size: 1.05rem; font-weight: 700; padding: 8px 18px; border-radius: 30px; border: 2px solid var(--dark); box-shadow: 3px 3px 0px var(--dark); background-color: var(--cream); transition: all 0.2s; display: inline-block; }
-        .nav-links a:hover { background-color: var(--pink); transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--dark); }
+        .nav-links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 30px;
+            border: 2px solid var(--dark);
+            box-shadow: 3px 3px 0px var(--dark);
+            background-color: var(--cream);
+            transition: all 0.2s;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .nav-links a:hover {
+            background-color: var(--pink);
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px var(--dark);
+        }
 
-        .header-actions { display: flex; align-items: center; gap: 14px; }
-        .icon-btn { background: none; border: none; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; color: var(--dark); transition: transform 0.2s; padding: 6px; }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            transition: transform 0.2s;
+            padding: 6px;
+        }
         .icon-btn:hover { transform: scale(1.12); }
 
         .admin-status-dot {
@@ -73,70 +124,41 @@
         }
         .admin-status-dot.active { display: block; }
 
-        .cart-badge { position: absolute; top: -4px; right: -6px; background-color: var(--pink); color: var(--dark); font-family: 'Lilita One', cursive; font-size: 0.8rem; min-width: 21px; height: 21px; padding: 0 4px; border-radius: 50%; border: 2px solid var(--dark); display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
+        .cart-badge {
+            position: absolute;
+            top: -4px;
+            right: -6px;
+            background-color: var(--pink);
+            color: var(--dark);
+            font-family: 'Lilita One', cursive;
+            font-size: 0.8rem;
+            min-width: 21px;
+            height: 21px;
+            padding: 0 4px;
+            border-radius: 50%;
+            border: 2px solid var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
         .cart-badge.pop { animation: badgePop 0.35s ease; }
         @keyframes badgePop { 0% { transform: scale(1); } 50% { transform: scale(1.45); background-color: var(--yellow); } 100% { transform: scale(1); } }
 
-        .btn-header { background-color: var(--pink); color: var(--dark); padding: 10px 22px; border-radius: 30px; border: 2px solid var(--dark); text-decoration: none; box-shadow: 3px 3px 0px var(--dark); font-size: 1.05rem; transition: all 0.2s; white-space: nowrap; }
+        .btn-header {
+            background-color: var(--pink);
+            color: var(--dark);
+            padding: 10px 22px;
+            border-radius: 30px;
+            border: 2px solid var(--dark);
+            text-decoration: none;
+            box-shadow: 3px 3px 0px var(--dark);
+            font-size: 1.05rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
         .btn-header:hover { background-color: var(--yellow); }
         .btn-header:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--dark); }
-
-        /* BOTÃO HAMBÚRGUER & MENU MOBILE */
-        .mobile-menu-btn {
-            display: none;
-            background-color: var(--yellow);
-            color: var(--dark);
-            border: 2px solid var(--dark);
-            box-shadow: 3px 3px 0px var(--dark);
-            border-radius: 14px;
-            width: 42px;
-            height: 42px;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-        .mobile-menu-btn:active {
-            transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0px var(--dark);
-        }
-
-        .mobile-nav-panel {
-            display: none;
-            width: 100%;
-            background-color: #FFF;
-            border: 2.5px solid var(--dark);
-            border-radius: 22px;
-            padding: 14px;
-            box-shadow: 4px 4px 0px var(--dark);
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 6px;
-            animation: slideDownFade 0.22s ease;
-        }
-        .mobile-nav-panel.open {
-            display: flex;
-        }
-        .mobile-nav-panel a {
-            text-decoration: none;
-            color: var(--dark);
-            font-family: 'Lilita One', cursive;
-            font-size: 1.1rem;
-            padding: 10px 16px;
-            border-radius: 16px;
-            border: 2px solid var(--dark);
-            box-shadow: 2.5px 2.5px 0px var(--dark);
-            background-color: var(--cream);
-            text-align: center;
-            transition: 0.15s;
-        }
-        .mobile-nav-panel a.mobile-cta-link {
-            background-color: var(--pink);
-        }
-        .mobile-nav-panel a:active {
-            transform: translate(1.5px, 1.5px);
-            box-shadow: 1px 1px 0px var(--dark);
-        }
 
         /* DECORAÇÕES DE FUNDO */
         .bg-shape { position: absolute; z-index: 1; border: 3px solid var(--dark); }
@@ -154,15 +176,15 @@
         .choco-4 { bottom: 5%; left: -10px; transform: rotate(45deg); width: 50px; z-index: 1; }
 
         /* HERO SECTION */
-        .hero-section { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 10px 50px 60px 50px; z-index: 5; }
-        .hero-left { max-width: 50%; position: relative; padding-left: 20px; z-index: 5; margin-top: -15px; }
+        .hero-section { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 10px 50px 60px 50px; z-index: 5; gap: 20px; }
+        .hero-left { width: 50%; max-width: 50%; position: relative; padding-left: 20px; z-index: 5; margin-top: -15px; }
         .hero-title { font-size: 4.8rem; line-height: 1.05; color: var(--dark); margin-bottom: 15px; transform: rotate(-3deg); position: relative; z-index: 3; }
         .title-blob-wrapper { position: relative; display: inline-block; z-index: 2; }
         .blob-bg-yellow { position: absolute; top: -5px; left: -15px; width: 110%; height: 110%; background-color: var(--yellow); border-radius: 40px 50px 30px 40px / 50px 40px 50px 30px; z-index: -1; transform: rotate(2deg); }
         .pill-pink { background-color: var(--pink); padding: 5px 25px; border-radius: 40px; display: inline-block; transform: rotate(-2deg); margin: 2px 0; }
         .pill-yellow { background-color: var(--yellow); padding: 5px 25px; border-radius: 40px; display: inline-block; transform: rotate(3deg); }
         .hero-desc { font-size: 1.15rem; font-weight: 600; color: #333; max-width: 85%; line-height: 1.5; margin-bottom: 25px; position: relative; z-index: 3; }
-        .hero-buttons { display: flex; gap: 15px; align-items: center; position: relative; z-index: 3; }
+        .hero-buttons { display: flex; gap: 15px; align-items: center; position: relative; z-index: 3; flex-wrap: wrap; }
         .btn-pink-hero { background-color: var(--pink); color: var(--dark); padding: 12px 28px; border-radius: 30px; text-decoration: none; font-size: 1.15rem; border: 2px solid var(--dark); box-shadow: 3px 3px 0px var(--dark); transition: all 0.2s; white-space: nowrap; }
         .btn-pink-hero:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--dark); }
         .btn-outline-hero { background-color: var(--cream); color: var(--dark); padding: 12px 28px; border-radius: 30px; border: 2px solid var(--dark); box-shadow: 3px 3px 0px var(--dark); text-decoration: none; font-size: 1.15rem; transition: all 0.2s; white-space: nowrap; }
@@ -213,7 +235,7 @@
 
         .products-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; position: relative; z-index: 3; }
         
-        .product-card { background-color: #FFF; border: 2.5px solid var(--dark); border-radius: 18px; padding: 12px; box-shadow: 4px 4px 0px var(--dark); display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform 0.2s; }
+        .product-card { background-color: #FFF; border: 2.5px solid var(--dark); border-radius: 18px; padding: 12px; box-shadow: 4px 4px 0px var(--dark); display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform 0.2s; min-width: 0; }
         .product-card:hover { transform: translateY(-5px); }
         .product-card.sold-out { opacity: 0.78; }
         .product-card.sold-out:hover { transform: none; }
@@ -232,8 +254,8 @@
         
         .product-info h3 { font-size: 1.15rem; margin-bottom: 6px; color: var(--dark); font-family: 'Lilita One', cursive; }
         .product-info p { font-size: 0.85rem; color: #555; font-weight: 600; line-height: 1.25; margin-bottom: 15px; }
-        .product-bottom { display: flex; justify-content: space-between; align-items: center; font-family: 'Lilita One', cursive; font-size: 1.2rem; }
-        .add-cart-btn { background-color: var(--green); color: #FFF; border: 2px solid var(--dark); width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 2px 2px 0px var(--dark); transition: transform 0.15s, background-color 0.2s; }
+        .product-bottom { display: flex; justify-content: space-between; align-items: center; font-family: 'Lilita One', cursive; font-size: 1.2rem; gap: 6px; }
+        .add-cart-btn { background-color: var(--green); color: #FFF; border: 2px solid var(--dark); width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 2px 2px 0px var(--dark); transition: transform 0.15s, background-color 0.2s; flex-shrink: 0; }
         .add-cart-btn:hover { transform: scale(1.1); background-color: #0b8a67; }
         .add-cart-btn:active { transform: scale(0.9); }
         .add-cart-btn:disabled { background-color: #999; cursor: not-allowed; transform: none; box-shadow: 1px 1px 0px var(--dark); }
@@ -1204,33 +1226,85 @@
         .toast-notification.show { transform: translate(-50%, 0); opacity: 1; }
 
         /* =========================================
-           ADAPTAÇÃO COMPLETA PARA TABLET E CELULAR
+           ADAPTAÇÃO MOBILE FIEL AO DESKTOP
            ========================================= */
-        @media (max-width: 1150px) {
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: flex; }
-            .logo-img { width: 165px; }
+        @media (max-width: 1180px) {
+            header { padding: 14px 24px 0px 24px; }
+            .logo-img { width: 155px; }
+            .nav-links { gap: 8px; }
+            .nav-links a { font-size: 0.92rem; padding: 6px 13px; }
+            .btn-header { font-size: 0.92rem; padding: 8px 16px; }
             .products-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         @media (max-width: 900px) {
-            header { padding: 15px 24px 6px 24px; }
-            .hero-section { flex-direction: column; padding: 16px 30px 44px 30px; text-align: center; }
-            .hero-left, .hero-right { max-width: 100%; width: 100%; padding-left: 0; margin-top: 0; }
-            .hero-title { font-size: 3.8rem; }
-            .hero-buttons { justify-content: center; }
-            .hero-desc { margin: 0 auto 24px auto; max-width: 92%; }
-            .hero-right { height: 370px; max-width: 480px; margin: 36px auto 0 auto; }
-            .bg-green-blob { bottom: -30px; left: -10px; width: 115px; height: 115px; }
-            .bg-yellow-circle { top: -10px; left: 82%; width: 55px; height: 55px; }
+            header {
+                padding: 14px 20px 4px 20px;
+                gap: 10px;
+            }
+            .logo-box { order: 1; }
+            .header-actions { order: 2; gap: 10px; }
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                gap: 8px;
+                padding-top: 2px;
+            }
+            .nav-links a {
+                font-size: 0.88rem;
+                padding: 6px 14px;
+            }
 
-            .menu-section { padding: 36px 28px 50px 28px; }
-            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .hero-section {
+                flex-direction: row;
+                align-items: center;
+                padding: 14px 24px 40px 24px;
+                text-align: left;
+                gap: 16px;
+            }
+            .hero-left {
+                width: 53%;
+                max-width: 53%;
+                padding-left: 6px;
+                margin-top: 0;
+            }
+            .hero-title { font-size: 2.85rem; margin-bottom: 10px; }
+            .pill-pink, .pill-yellow { padding: 3px 16px; }
+            .hero-desc { font-size: 0.95rem; max-width: 96%; margin: 0 0 16px 0; }
+            .hero-buttons { justify-content: flex-start; gap: 10px; }
+            .btn-pink-hero, .btn-outline-hero { padding: 9px 18px; font-size: 0.95rem; }
 
-            .about-section { flex-direction: column; padding: 50px 30px 60px 30px; gap: 36px; text-align: center; }
-            .about-left, .about-right { width: 100%; }
-            .about-left { height: 370px; max-width: 420px; }
-            .about-pills-row { justify-content: center; }
+            .hero-right {
+                width: 45%;
+                height: 310px;
+                margin-top: 0;
+            }
+            .green-seal-wrapper { width: 108px; height: 108px; top: -12px; right: -10px; }
+            .green-seal-text { font-size: 0.78rem; padding: 0 8px; }
+            .bg-green-blob { bottom: -25px; left: -15px; width: 100px; height: 100px; }
+            .bg-yellow-circle { top: 6px; left: 46%; width: 48px; height: 48px; }
+
+            .menu-section { padding: 32px 24px 48px 24px; }
+            .products-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+            .about-section {
+                flex-direction: row;
+                align-items: center;
+                padding: 46px 24px 54px 24px;
+                gap: 24px;
+                text-align: left;
+            }
+            .about-left {
+                width: 43%;
+                height: 320px;
+            }
+            .about-right { width: 55%; }
+            .about-title { font-size: 2.5rem; }
+            .about-subtitle { font-size: 1.18rem; }
+            .about-story-box { padding: 14px 16px; margin-bottom: 14px; }
+            .about-story-text { font-size: 0.92rem; line-height: 1.5; }
+            .about-pills-row { justify-content: flex-start; margin-bottom: 16px; }
 
             .admin-two-col { grid-template-columns: 1fr; }
             .kpi-grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -1239,7 +1313,7 @@
         }
 
         @media (max-width: 600px) {
-            body { padding: 8px; }
+            body { padding: 6px; }
             .site-canvas {
                 border-radius: 26px;
                 border-width: 2.5px;
@@ -1247,56 +1321,154 @@
             }
 
             header {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                padding: 14px 16px 4px 16px;
+                padding: 12px 14px 4px 14px;
                 gap: 8px;
             }
-            .logo-img { width: 128px; }
-            .header-actions { width: auto; gap: 8px; }
-            .btn-header { display: none; }
+            .logo-img { width: 118px; }
+            .header-actions { gap: 6px; }
+            .icon-btn { padding: 4px; }
+            .icon-btn svg { width: 20px; height: 20px; }
+            .btn-header {
+                display: inline-block;
+                font-size: 0.78rem;
+                padding: 7px 12px;
+                box-shadow: 2px 2px 0px var(--dark);
+            }
+            .nav-links {
+                gap: 6px;
+                overflow-x: auto;
+                justify-content: space-between;
+                padding-bottom: 2px;
+            }
+            .nav-links a {
+                font-size: 0.76rem;
+                padding: 5px 10px;
+                box-shadow: 2px 2px 0px var(--dark);
+            }
 
-            .hero-section { padding: 12px 18px 36px 18px; }
-            .hero-title { font-size: 2.75rem; line-height: 1.08; margin-bottom: 14px; }
-            .pill-pink, .pill-yellow { padding: 4px 18px; }
-            .hero-desc { font-size: 1rem; max-width: 100%; margin-bottom: 20px; }
-            .hero-buttons { flex-direction: column; width: 100%; gap: 10px; }
-            .btn-pink-hero, .btn-outline-hero { width: 100%; text-align: center; padding: 12px 20px; font-size: 1.08rem; }
+            .hero-section {
+                flex-direction: row;
+                align-items: center;
+                padding: 12px 14px 30px 14px;
+                gap: 10px;
+                text-align: left;
+            }
+            .hero-left {
+                width: 54%;
+                max-width: 54%;
+                padding-left: 2px;
+            }
+            .hero-title {
+                font-size: 1.85rem;
+                line-height: 1.08;
+                margin-bottom: 8px;
+            }
+            .blob-bg-yellow { left: -6px; top: -2px; }
+            .pill-pink, .pill-yellow { padding: 2px 11px; margin: 1px 0; }
+            .hero-desc {
+                font-size: 0.76rem;
+                line-height: 1.35;
+                max-width: 100%;
+                margin-bottom: 12px;
+            }
+            .hero-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 6px;
+                width: 100%;
+            }
+            .btn-pink-hero, .btn-outline-hero {
+                width: auto;
+                padding: 7px 11px;
+                font-size: 0.74rem;
+                box-shadow: 2px 2px 0px var(--dark);
+            }
 
-            .hero-right { height: 290px; max-width: 340px; margin-top: 30px; }
-            .blob-pink-bg { width: 112%; height: 104%; right: -6%; top: -2%; }
-            .green-seal-wrapper { width: 104px; height: 104px; right: -8px; top: -12px; }
-            .green-seal-text { font-size: 0.78rem; padding: 0 8px; }
+            .hero-right {
+                width: 44%;
+                height: 215px;
+                margin-top: 0;
+            }
+            .blob-pink-bg { width: 118%; height: 106%; right: -8%; top: -3%; }
+            .cookie-hero-img { border-radius: 14px; border-width: 2.5px; box-shadow: 4px 4px 0px var(--dark); }
+            .green-seal-wrapper { width: 76px; height: 76px; right: -8px; top: -12px; }
+            .green-seal-text { font-size: 0.56rem; line-height: 1.05; padding: 0 5px; margin-top: -2px; }
 
-            .pink-strip { padding: 12px 12px; gap: 10px 14px; }
-            .pink-strip span { font-size: 1.05rem; letter-spacing: 0.5px; }
-            .strip-icon { width: 18px; height: 18px; }
+            .s-top { width: 24px; top: -10px; left: 6%; }
+            .s-mid { width: 20px; left: -14px; }
+            .choco-1 { width: 22px; left: 45%; top: 2%; }
+            .choco-2 { width: 24px; left: 10%; bottom: -6px; }
+            .choco-3 { width: 26px; top: 8%; right: 2%; }
+            .choco-4 { width: 28px; bottom: 2%; left: -6px; }
+            .confetti { height: 9px; width: 3px; }
+            .c1 { left: -8px; top: 6px; }
+            .c2, .c3, .c4, .c5 { display: none; }
+            .bg-green-blob { width: 70px; height: 70px; bottom: -18px; left: -18px; }
+            .bg-yellow-circle { width: 34px; height: 34px; top: 4px; left: 46%; box-shadow: 2px 2px 0px var(--dark); }
+            .dot { display: none; }
 
-            .menu-section { padding: 28px 16px 40px 16px; }
-            .menu-bg-pink-blob { width: 140px; height: 140px; top: -45px; right: -45px; }
-            .menu-bg-green-blob { width: 110px; height: 110px; bottom: -25px; left: -30px; }
-            .menu-header { flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-bottom: 22px; }
-            .menu-title-area h2 { font-size: 2.15rem; justify-content: center; }
-            .menu-title-area p { font-size: 0.98rem; }
-            .store-closed-banner { font-size: 0.88rem; padding: 8px 14px; justify-content: center; text-align: center; }
+            .pink-strip { padding: 10px 10px; gap: 8px 10px; border-top-width: 2.5px; border-bottom-width: 2.5px; }
+            .pink-strip span { font-size: 0.88rem; letter-spacing: 0.4px; }
+            .strip-icon { width: 15px; height: 15px; }
 
-            .products-grid { grid-template-columns: 1fr; gap: 14px; }
-            .product-card { padding: 12px; }
-            .card-thumbnail-box { height: 180px; }
-            .add-cart-btn { width: 42px; height: 42px; }
+            .menu-section { padding: 24px 12px 34px 12px; }
+            .menu-bg-pink-blob { width: 110px; height: 110px; top: -35px; right: -35px; }
+            .menu-bg-green-blob { width: 85px; height: 85px; bottom: -20px; left: -25px; }
+            .menu-header { flex-direction: row; align-items: center; justify-content: space-between; text-align: left; gap: 8px; margin-bottom: 16px; }
+            .menu-title-area h2 { font-size: 1.65rem; justify-content: flex-start; gap: 6px; }
+            .sunburst-icon { width: 22px; height: 22px; }
+            .menu-title-area p { font-size: 0.82rem; margin-top: 2px; }
+            .store-closed-banner { font-size: 0.78rem; padding: 6px 10px; }
 
-            .about-section { padding: 38px 16px 48px 16px; gap: 28px; }
-            .about-left { height: 300px; max-width: 330px; }
-            .about-sticker-badge { font-size: 0.88rem; padding: 8px 14px; left: 4px; bottom: -10px; max-width: 165px; }
-            .about-title { font-size: 2.45rem; }
-            .about-subtitle { font-size: 1.25rem; }
-            .about-story-box { padding: 16px; border-radius: 18px; text-align: left; }
-            .about-story-text { font-size: 0.96rem; line-height: 1.55; }
-            .about-feature-pill { font-size: 0.82rem; padding: 5px 11px; }
-            .about-right .btn-pink-hero { width: 100%; text-align: center; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .product-card { padding: 8px; border-radius: 14px; border-width: 2px; box-shadow: 3px 3px 0px var(--dark); }
+            .card-thumbnail-box { height: 112px; border-radius: 10px; margin-bottom: 8px; }
+            .product-badge { font-size: 0.62rem; padding: 2px 7px; top: 4px; left: 4px; }
+            .product-info h3 { font-size: 0.92rem; margin-bottom: 4px; }
+            .product-info p { font-size: 0.73rem; line-height: 1.2; margin-bottom: 10px; }
+            .product-bottom { font-size: 0.98rem; }
+            .add-cart-btn { width: 31px; height: 31px; }
+            .add-cart-btn svg { width: 14px; height: 14px; }
 
-            .confetti, .star-draw, .choco-draw { display: none; }
+            .about-section {
+                flex-direction: row;
+                align-items: center;
+                padding: 30px 12px 36px 12px;
+                gap: 12px;
+                text-align: left;
+                border-top-width: 2.5px;
+            }
+            .about-bg-yellow-blob { width: 110px; height: 110px; bottom: -35px; right: -35px; }
+            .about-bg-green-circle { width: 42px; height: 42px; top: 14px; right: 4%; box-shadow: 2px 2px 0px var(--dark); }
+            .choco-about-1, .choco-about-2 { width: 20px; }
+
+            .about-left {
+                width: 41%;
+                height: 225px;
+            }
+            .about-chef-img { border-radius: 16px; border-width: 2.5px; box-shadow: 4px 4px 0px var(--dark); }
+            .about-sticker-badge {
+                font-size: 0.64rem;
+                padding: 5px 9px;
+                left: 0px;
+                bottom: -8px;
+                max-width: 115px;
+                border-width: 2px;
+                box-shadow: 2px 2px 0px var(--dark);
+            }
+            .s-about-1 { width: 22px; top: -6px; right: 4px; }
+            .s-about-2 { width: 18px; bottom: 24px; right: -4px; }
+
+            .about-right { width: 57%; }
+            .about-tag-pill { font-size: 0.72rem; padding: 3px 10px; margin-bottom: 6px; box-shadow: 2px 2px 0px var(--dark); }
+            .about-title { font-size: 1.65rem; margin-bottom: 6px; }
+            .about-title-blob { left: -5px; width: calc(100% + 10px); }
+            .about-subtitle { font-size: 0.92rem; margin-bottom: 8px; }
+            .about-story-box { padding: 10px 11px; border-radius: 14px; border-width: 2px; box-shadow: 3px 3px 0px var(--dark); margin-bottom: 10px; }
+            .about-story-text { font-size: 0.74rem; line-height: 1.42; }
+            .about-pills-row { gap: 5px; margin-bottom: 12px; }
+            .about-feature-pill { font-size: 0.65rem; padding: 3px 8px; box-shadow: 1.5px 1.5px 0px var(--dark); }
+            .about-right .btn-pink-hero { width: auto; display: inline-block; font-size: 0.74rem; padding: 7px 12px; }
 
             .drawer { width: 100vw; max-width: 100vw; border-left: none; }
             .drawer-header { padding: 14px 18px; }
@@ -1344,10 +1516,12 @@
             .sale-total-val { text-align: left; min-width: auto; }
         }
 
-        @media (max-width: 380px) {
+        @media (max-width: 360px) {
+            .hero-title { font-size: 1.6rem; }
+            .hero-right { height: 190px; }
+            .logo-img { width: 105px; }
+            .nav-links a { font-size: 0.7rem; padding: 4px 8px; }
             .kpi-grid-4 { grid-template-columns: 1fr; }
-            .hero-title { font-size: 2.4rem; }
-            .logo-img { width: 115px; }
         }
     </style>
 </head>
@@ -1384,25 +1558,7 @@
                 </button>
 
                 <a href="#cardapio" class="btn-header">Quero meu cookie</a>
-
-                <!-- BOTÃO HAMBÚRGUER PARA CELULAR -->
-                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round">
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
             </div>
-
-            <!-- MENU DESDOBRÁVEL MOBILE -->
-            <nav class="mobile-nav-panel" id="mobile-nav-panel" aria-label="Menu Mobile">
-                <a href="#inicio" onclick="closeMobileMenu()">Início</a>
-                <a href="#cardapio" onclick="closeMobileMenu()">Cardápio</a>
-                <a href="#cardapio" onclick="closeMobileMenu()">Encomendas</a>
-                <a href="#sobre" onclick="closeMobileMenu()">Sobre</a>
-                <a href="#cardapio" class="mobile-cta-link" onclick="closeMobileMenu()">Quero meu cookie 🍪</a>
-            </nav>
         </header>
 
         <section class="hero-section">
@@ -1632,18 +1788,18 @@ Cada fornada de brownies e cookies é preparada artesanalmente por mim, pensando
         </div>
         
         <div class="admin-modal-body" id="admin-content">
-            <!-- TELA DE LOGIN (SUPABASE AUTH) -->
+            <!-- TELA DE LOGIN -->
             <div class="login-box" id="admin-login-box">
                 <h3>Acesso Administrativo</h3>
-                <p>Entre com o e-mail e a senha cadastrados no painel da loja.</p>
+                <p>Entre com seu usuário e senha para gerenciar a loja.</p>
                 <div class="admin-form-group">
-                    <input type="email" id="admin-user" placeholder="E-mail da administradora" onkeydown="if(event.key==='Enter') doAdminLogin()">
+                    <input type="text" id="admin-user" placeholder="Usuário" onkeydown="if(event.key==='Enter') doAdminLogin()">
                 </div>
                 <div class="admin-form-group">
                     <input type="password" id="admin-pass" placeholder="Senha" onkeydown="if(event.key==='Enter') doAdminLogin()">
                 </div>
                 <button class="btn-add-product" id="admin-login-submit-btn" onclick="doAdminLogin()">Entrar no Painel</button>
-                <p id="login-error" style="color: #E63946; margin-top: 12px; display: none; font-weight: 700;">E-mail ou senha incorretos!</p>
+                <p id="login-error" style="color: #E63946; margin-top: 12px; display: none; font-weight: 700; font-size: 0.9rem;">Usuário ou senha incorretos!</p>
             </div>
 
             <!-- DASHBOARD GERENCIAL -->
@@ -2026,14 +2182,14 @@ momentos!"></textarea>
                                 <button class="btn-add-product" onclick="saveStoreSettings()">Salvar Configurações</button>
                             </div>
 
-                            <!-- SEGURANÇA & ACESSO (TROCA DE E-MAIL E SENHA NO SUPABASE) -->
+                            <!-- SEGURANÇA & ACESSO (TROCA DE USUÁRIO E SENHA) -->
                             <div class="admin-card-box">
                                 <div class="admin-section-title">🔐 Segurança & Acesso Admin</div>
 
                                 <div class="hero-lines-grid">
                                     <div class="admin-form-group">
-                                        <label>E-mail de Acesso</label>
-                                        <input type="email" id="settings-admin-user" placeholder="seu@email.com">
+                                        <label>Usuário de Acesso</label>
+                                        <input type="text" id="settings-admin-user" placeholder="Ex: admin">
                                     </div>
                                     <div class="admin-form-group">
                                         <label>Senha Atual *</label>
@@ -2041,7 +2197,7 @@ momentos!"></textarea>
                                     </div>
                                     <div class="admin-form-group">
                                         <label>Nova Senha</label>
-                                        <input type="password" id="settings-new-pass" placeholder="Mínimo 6 caracteres">
+                                        <input type="password" id="settings-new-pass" placeholder="Mínimo 4 caracteres">
                                     </div>
                                     <div class="admin-form-group">
                                         <label>Confirmar Nova Senha</label>
@@ -2049,10 +2205,10 @@ momentos!"></textarea>
                                     </div>
                                 </div>
                                 <div style="margin-top: -6px; margin-bottom: 12px;">
-                                    <span class="edit-hint">Altera diretamente sua credencial segura no Supabase.</span>
+                                    <span class="edit-hint">Deixe "Nova Senha" em branco se quiser alterar apenas o nome de usuário.</span>
                                 </div>
 
-                                <button class="btn-add-product" id="update-creds-btn" style="background-color: var(--yellow);" onclick="updateAdminCredentials()">🔑 Atualizar E-mail e Senha</button>
+                                <button class="btn-add-product" id="update-creds-btn" style="background-color: var(--yellow);" onclick="updateAdminCredentials()">🔑 Atualizar Usuário e Senha</button>
                             </div>
 
                             <div class="admin-card-box">
@@ -2090,6 +2246,11 @@ momentos!"></textarea>
         const DEFAULT_PRODUCT_IMG = "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80";
         const DEFAULT_ABOUT_IMG = "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80";
 
+        const defaultAdminAuth = {
+            user: "admin",
+            pass: "brownie"
+        };
+
         const defaultHeroTexts = {
             line1: "Brownies",
             line2: "e Cookies",
@@ -2118,7 +2279,11 @@ momentos!"></textarea>
         /* ==========================================
            ESTADO GLOBAL DA APLICAÇÃO
            ========================================== */
-        let currentAdminUser = null;
+        let isAdminLoggedIn = false;
+        let adminAuth = {
+            ...defaultAdminAuth,
+            ...(JSON.parse(localStorage.getItem('tb_admin_auth')) || {})
+        };
         let products = [...defaultProducts];
         let cart = JSON.parse(localStorage.getItem('tb_cart')) || [];
         let ordersHistory = [];
@@ -2132,24 +2297,6 @@ momentos!"></textarea>
         let editingOrderItems = [];
         let currentReportPeriod = 'all';
         let currentSalesFilter = 'all';
-
-        /* ==========================================
-           MENU MOBILE (HAMBÚRGUER)
-           ========================================== */
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileNavPanel = document.getElementById('mobile-nav-panel');
-
-        function closeMobileMenu() {
-            if (mobileNavPanel) mobileNavPanel.classList.remove('open');
-            if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        }
-
-        if (mobileMenuBtn && mobileNavPanel) {
-            mobileMenuBtn.addEventListener('click', () => {
-                const isOpen = mobileNavPanel.classList.toggle('open');
-                mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
-            });
-        }
 
         /* ==========================================
            COMPRESSÃO E UPLOAD DE IMAGENS (SUPABASE STORAGE)
@@ -2270,6 +2417,9 @@ momentos!"></textarea>
                             heroImgUrl = row.value.url;
                         } else if (row.key === 'aboutData' && row.value) {
                             aboutData = { ...defaultAboutData, ...row.value };
+                        } else if (row.key === 'adminAuth' && row.value && row.value.user && row.value.pass) {
+                            adminAuth = { ...defaultAdminAuth, ...row.value };
+                            localStorage.setItem('tb_admin_auth', JSON.stringify(adminAuth));
                         }
                     });
                 }
@@ -2288,7 +2438,7 @@ momentos!"></textarea>
         }
 
         async function loadAdminOrders() {
-            if (!currentAdminUser) return;
+            if (!isAdminLoggedIn) return;
             const { data, error } = await sb
                 .from('orders')
                 .select('*')
@@ -2330,6 +2480,10 @@ momentos!"></textarea>
                                 document.getElementById('hero-img-preview').src = heroImgUrl;
                             }
                             if (row.key === 'aboutData' && row.value) aboutData = { ...defaultAboutData, ...row.value };
+                            if (row.key === 'adminAuth' && row.value && row.value.user && row.value.pass) {
+                                adminAuth = { ...defaultAdminAuth, ...row.value };
+                                localStorage.setItem('tb_admin_auth', JSON.stringify(adminAuth));
+                            }
                         });
                         applyHeroTextsUI();
                         applyAboutUI();
@@ -2337,7 +2491,7 @@ momentos!"></textarea>
                     }
                 })
                 .on('postgres_changes', { event: '*', schema: 'public', table: 'orders' }, async () => {
-                    if (currentAdminUser) {
+                    if (isAdminLoggedIn) {
                         await loadAdminOrders();
                     }
                 })
@@ -2552,8 +2706,8 @@ momentos!"></textarea>
             const adminUserInput = document.getElementById('settings-admin-user');
 
             whatsappInput.value = storeSettings.whatsapp || "";
-            if (adminUserInput && currentAdminUser) {
-                adminUserInput.value = currentAdminUser.email || "";
+            if (adminUserInput) {
+                adminUserInput.value = adminAuth.user || "admin";
             }
 
             if (storeSettings.storeOpen) {
@@ -2661,6 +2815,17 @@ momentos!"></textarea>
 
         function formatBRL(value) { return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); }
         function saveCart() { localStorage.setItem('tb_cart', JSON.stringify(cart)); }
+
+        function clearCart() {
+            cart = [];
+            localStorage.removeItem('tb_cart');
+            localStorage.setItem('tb_cart', '[]');
+            if (cartCountEl) {
+                cartCountEl.textContent = '0';
+                cartCountEl.classList.remove('pop');
+            }
+            renderCart();
+        }
 
         function showToast(text) {
             toastEl.textContent = text;
@@ -2836,6 +3001,7 @@ momentos!"></textarea>
             try {
                 syncCartWithStock();
                 if (cart.length === 0) {
+                    clearCart();
                     closeAllModals();
                     showToast("Os itens do carrinho esgotaram no momento.");
                     return;
@@ -2850,46 +3016,7 @@ momentos!"></textarea>
                 const itemsLines = cart.map(i => `- ${i.qty}x ${i.name}`).join('\n');
                 const orderItemsSnapshot = cart.map(i => ({ id: i.id, name: i.name, qty: i.qty, price: i.price }));
 
-                const newOrder = {
-                    id: '#' + Math.floor(1000 + Math.random() * 9000),
-                    timestamp: Date.now(),
-                    date: new Date().toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }),
-                    customer: customerName,
-                    payment: paymentMethod,
-                    deliveryType,
-                    address: deliveryType === 'Entrega' ? address : '',
-                    channel: 'Site / WhatsApp',
-                    status: 'Pendente',
-                    itemsList: orderItemsSnapshot,
-                    items: orderItemsSnapshot.map(i => `${i.qty}x ${i.name}`).join(', '),
-                    total
-                };
-
-                // Grava o pedido no banco de dados Supabase
-                const { error: orderErr } = await sb.from('orders').insert(newOrder);
-                if (orderErr) {
-                    console.warn("Aviso ao registrar pedido no banco:", orderErr.message);
-                }
-
-                // Dá baixa segura no estoque via função RPC do Supabase
-                for (const item of orderItemsSnapshot) {
-                    await sb.rpc('decrement_stock', { p_id: item.id, p_qty: item.qty });
-                }
-
-                // Atualiza lista local de produtos após baixa
-                const { data: refreshedProds } = await sb.from('products').select('*').order('created_at', { ascending: true });
-                if (Array.isArray(refreshedProds) && refreshedProds.length > 0) {
-                    products = refreshedProds.map(normalizeProduct);
-                    renderProducts();
-                }
-
-                if (currentAdminUser) {
-                    await loadAdminOrders();
-                }
-
-                cart = [];
-                saveCart();
-                renderCart();
+                clearCart();
                 closeAllModals();
 
                 const deliverySection = deliveryType === 'Entrega'
@@ -2907,8 +3034,51 @@ momentos!"></textarea>
 
                 const phone = (storeSettings.whatsapp || "5511999999999").replace(/\D/g, '');
                 const message = encodeURIComponent(rawMessage);
-                showToast("Pedido registrado! Encaminhando ao WhatsApp... \u{1F36A}");
-                window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank');
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
+
+                const waWindow = window.open(whatsappUrl, '_blank');
+                if (!waWindow) {
+                    window.location.href = whatsappUrl;
+                }
+                showToast("Pedido finalizado! Seu carrinho está vazio para um novo pedido. \u{1F36A}");
+
+                const newOrder = {
+                    id: '#' + Math.floor(1000 + Math.random() * 9000),
+                    timestamp: Date.now(),
+                    date: new Date().toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }),
+                    customer: customerName,
+                    payment: paymentMethod,
+                    deliveryType,
+                    address: deliveryType === 'Entrega' ? address : '',
+                    channel: 'Site / WhatsApp',
+                    status: 'Pendente',
+                    itemsList: orderItemsSnapshot,
+                    items: orderItemsSnapshot.map(i => `${i.qty}x ${i.name}`).join(', '),
+                    total
+                };
+
+                try {
+                    const { error: orderErr } = await sb.from('orders').insert(newOrder);
+                    if (orderErr) {
+                        console.warn("Aviso ao registrar pedido no banco:", orderErr.message);
+                    }
+
+                    for (const item of orderItemsSnapshot) {
+                        await sb.rpc('decrement_stock', { p_id: item.id, p_qty: item.qty });
+                    }
+
+                    const { data: refreshedProds } = await sb.from('products').select('*').order('created_at', { ascending: true });
+                    if (Array.isArray(refreshedProds) && refreshedProds.length > 0) {
+                        products = refreshedProds.map(normalizeProduct);
+                        renderProducts();
+                    }
+
+                    if (isAdminLoggedIn) {
+                        await loadAdminOrders();
+                    }
+                } catch (dbErr) {
+                    console.warn("Erro na sincronização pós-pedido:", dbErr);
+                }
             } finally {
                 confirmBtn.disabled = false;
                 confirmBtn.textContent = "Enviar no WhatsApp 📲";
@@ -2924,7 +3094,6 @@ momentos!"></textarea>
         const adminModal = document.getElementById('admin-modal');
 
         function closeAllModals() {
-            closeMobileMenu();
             drawerOverlay.classList.remove('open');
             cartDrawer.classList.remove('open');
             reviewOrderModal.classList.remove('open');
@@ -2943,7 +3112,7 @@ momentos!"></textarea>
             if (open) {
                 drawerOverlay.classList.add('open');
                 adminModal.classList.add('open');
-                if (currentAdminUser) {
+                if (isAdminLoggedIn) {
                     renderReports();
                     renderSalesControl();
                 }
@@ -2968,11 +3137,12 @@ momentos!"></textarea>
         }
 
         /* ==========================================
-           AUTENTICAÇÃO SUPABASE & TROCA DE SENHA
+           AUTENTICAÇÃO ADMIN (ADMIN / BROWNIE) & TROCA DE SENHA
            ========================================== */
-        function setAdminLoggedInState(user) {
-            currentAdminUser = user;
-            if (user) {
+        function setAdminLoggedInState(loggedIn) {
+            isAdminLoggedIn = Boolean(loggedIn);
+            if (isAdminLoggedIn) {
+                sessionStorage.setItem('tb_admin_logged', 'true');
                 adminModal.classList.remove('login-compact');
                 document.getElementById('admin-login-box').style.display = 'none';
                 document.getElementById('admin-dashboard').style.display = 'block';
@@ -2984,6 +3154,7 @@ momentos!"></textarea>
                 applyStoreSettingsUI();
                 loadAdminOrders();
             } else {
+                sessionStorage.removeItem('tb_admin_logged');
                 cancelEdit();
                 cancelOrderEdit();
                 adminModal.classList.add('login-compact');
@@ -2998,63 +3169,52 @@ momentos!"></textarea>
             }
         }
 
-        async function doAdminLogin() {
-            const email = document.getElementById('admin-user').value.trim();
-            const password = document.getElementById('admin-pass').value;
-            const loginBtn = document.getElementById('admin-login-submit-btn');
+        function doAdminLogin() {
+            const userInput = document.getElementById('admin-user').value.trim();
+            const passInput = document.getElementById('admin-pass').value;
             const errorEl = document.getElementById('login-error');
 
-            if (!email || !password) {
-                errorEl.textContent = "Preencha o e-mail e a senha!";
+            if (!userInput || !passInput) {
+                errorEl.textContent = "Preencha o usuário e a senha!";
                 errorEl.style.display = 'block';
                 return;
             }
 
-            loginBtn.disabled = true;
-            loginBtn.textContent = "⏳ Entrando...";
-
-            try {
-                const { data, error } = await sb.auth.signInWithPassword({ email, password });
-                if (error) {
-                    errorEl.textContent = "E-mail ou senha incorretos!";
-                    errorEl.style.display = 'block';
-                } else if (data && data.user) {
-                    setAdminLoggedInState(data.user);
-                    switchAdminTab('tab-relatorios');
-                    showToast("Bem-vinda de volta, Malau! 🍪");
-                }
-            } finally {
-                loginBtn.disabled = false;
-                loginBtn.textContent = "Entrar no Painel";
+            if (userInput === adminAuth.user && passInput === adminAuth.pass) {
+                setAdminLoggedInState(true);
+                switchAdminTab('tab-relatorios');
+                showToast("Bem-vinda de volta, Malau! 🍪");
+            } else {
+                errorEl.textContent = "Usuário ou senha incorretos!";
+                errorEl.style.display = 'block';
             }
         }
 
-        async function doAdminLogout() {
-            await sb.auth.signOut();
-            setAdminLoggedInState(null);
+        function doAdminLogout() {
+            setAdminLoggedInState(false);
             showToast("Sessão administrativa encerrada 🔒");
         }
 
         async function updateAdminCredentials() {
-            if (!currentAdminUser) return;
-            const newEmail = document.getElementById('settings-admin-user').value.trim();
+            if (!isAdminLoggedIn) return;
+            const newUser = document.getElementById('settings-admin-user').value.trim();
             const currentPass = document.getElementById('settings-current-pass').value;
             const newPass = document.getElementById('settings-new-pass').value;
             const confirmPass = document.getElementById('settings-confirm-pass').value;
             const btn = document.getElementById('update-creds-btn');
 
-            if (!newEmail) {
-                alert("O e-mail de acesso não pode ficar em branco!");
+            if (!newUser) {
+                alert("O nome de usuário não pode ficar em branco!");
                 return;
             }
-            if (!currentPass) {
-                alert("Digite sua senha atual para confirmar a alteração!");
+            if (!currentPass || currentPass !== adminAuth.pass) {
+                alert("Senha atual incorreta! Digite sua senha atual para confirmar a alteração.");
                 document.getElementById('settings-current-pass').focus();
                 return;
             }
             if (newPass || confirmPass) {
-                if (newPass.length < 6) {
-                    alert("A nova senha deve ter pelo menos 6 caracteres.");
+                if (newPass.length < 4) {
+                    alert("A nova senha deve ter pelo menos 4 caracteres.");
                     return;
                 }
                 if (newPass !== confirmPass) {
@@ -3063,43 +3223,27 @@ momentos!"></textarea>
                 }
             }
 
+            const updatedAuth = {
+                user: newUser,
+                pass: newPass ? newPass : adminAuth.pass
+            };
+
             btn.disabled = true;
-            btn.textContent = "⏳ Atualizando...";
+            btn.textContent = "⏳ Salvando...";
 
             try {
-                // Revalida a senha atual antes de alterar
-                const { error: authErr } = await sb.auth.signInWithPassword({
-                    email: currentAdminUser.email,
-                    password: currentPass
-                });
-                if (authErr) {
-                    alert("Senha atual incorreta!");
-                    return;
-                }
-
-                const updates = {};
-                if (newEmail !== currentAdminUser.email) updates.email = newEmail;
-                if (newPass) updates.password = newPass;
-
-                if (Object.keys(updates).length === 0) {
-                    alert("Nenhuma alteração informada.");
-                    return;
-                }
-
-                const { data, error: updErr } = await sb.auth.updateUser(updates);
-                if (updErr) {
-                    alert("Erro ao atualizar credenciais: " + updErr.message);
-                    return;
-                }
-
-                if (data && data.user) currentAdminUser = data.user;
+                await saveSettingToSupabase('adminAuth', updatedAuth);
+                adminAuth = updatedAuth;
+                localStorage.setItem('tb_admin_auth', JSON.stringify(adminAuth));
                 document.getElementById('settings-current-pass').value = '';
                 document.getElementById('settings-new-pass').value = '';
                 document.getElementById('settings-confirm-pass').value = '';
-                showToast("Credenciais atualizadas com sucesso! 🔐");
+                showToast("Usuário e senha atualizados com sucesso! 🔐");
+            } catch (err) {
+                alert("Erro ao salvar nova senha no banco: " + err.message);
             } finally {
                 btn.disabled = false;
-                btn.textContent = "🔑 Atualizar E-mail e Senha";
+                btn.textContent = "🔑 Atualizar Usuário e Senha";
             }
         }
 
@@ -3919,6 +4063,7 @@ momentos!"></textarea>
                 heroTexts,
                 heroImgUrl,
                 aboutData,
+                adminAuth,
                 exportedAt: new Date().toISOString()
             };
             const blob = new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" });
@@ -3965,6 +4110,11 @@ momentos!"></textarea>
                         aboutData = { ...defaultAboutData, ...data.aboutData };
                         await saveSettingToSupabase('aboutData', aboutData);
                     }
+                    if (data.adminAuth && data.adminAuth.user && data.adminAuth.pass) {
+                        adminAuth = { ...defaultAdminAuth, ...data.adminAuth };
+                        localStorage.setItem('tb_admin_auth', JSON.stringify(adminAuth));
+                        await saveSettingToSupabase('adminAuth', adminAuth);
+                    }
                     applyHeroTextsUI();
                     applyAboutUI();
                     applyStoreSettingsUI();
@@ -3990,9 +4140,8 @@ momentos!"></textarea>
 
             await loadPublicData();
 
-            const { data: sessionData } = await sb.auth.getSession();
-            if (sessionData && sessionData.session && sessionData.session.user) {
-                setAdminLoggedInState(sessionData.session.user);
+            if (sessionStorage.getItem('tb_admin_logged') === 'true') {
+                setAdminLoggedInState(true);
             }
 
             setupRealtimeSubscriptions();
