@@ -183,17 +183,14 @@
         /* HERO SECTION */
         .hero-section { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 15px 50px 60px 50px; z-index: 5; gap: 30px; }
         .hero-left { width: 50%; max-width: 50%; position: relative; padding-left: 20px; z-index: 5; margin-top: -10px; }
-        .hero-title { font-size: 4.8rem; line-height: 1.05; color: var(--dark); margin-bottom: 15px; transform: rotate(-3deg); position: relative; z-index: 3; }
+        .hero-title { font-size: 4.8rem; line-height: 1.05; color: var(--dark); margin-bottom: 18px; transform: rotate(-3deg); position: relative; z-index: 3; }
         .title-blob-wrapper { position: relative; display: inline-block; z-index: 2; }
         .blob-bg-yellow { position: absolute; top: -5px; left: -15px; width: 110%; height: 110%; background-color: var(--yellow); border-radius: 40px 50px 30px 40px / 50px 40px 50px 30px; z-index: -1; transform: rotate(2deg); }
         .pill-pink { background-color: var(--pink); padding: 5px 25px; border-radius: 40px; display: inline-block; transform: rotate(-2deg); margin: 2px 0; }
         .pill-yellow { background-color: var(--yellow); padding: 5px 25px; border-radius: 40px; display: inline-block; transform: rotate(3deg); }
-        .hero-desc { font-size: 1.15rem; font-weight: 600; color: #333; max-width: 85%; line-height: 1.5; margin-bottom: 25px; position: relative; z-index: 3; }
-        .hero-buttons { display: flex; gap: 15px; align-items: center; position: relative; z-index: 3; flex-wrap: wrap; }
+        .hero-desc { font-size: 1.18rem; font-weight: 600; color: #333; max-width: 88%; line-height: 1.55; margin-bottom: 10px; position: relative; z-index: 3; }
         .btn-pink-hero { background-color: var(--pink); color: var(--dark); padding: 12px 28px; border-radius: 30px; text-decoration: none; font-size: 1.15rem; border: 2px solid var(--dark); box-shadow: 3px 3px 0px var(--dark); transition: all 0.2s; white-space: nowrap; }
         .btn-pink-hero:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--dark); }
-        .btn-outline-hero { background-color: var(--cream); color: var(--dark); padding: 12px 28px; border-radius: 30px; border: 2px solid var(--dark); box-shadow: 3px 3px 0px var(--dark); text-decoration: none; font-size: 1.15rem; transition: all 0.2s; white-space: nowrap; }
-        .btn-outline-hero:hover { background-color: var(--yellow); transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--dark); }
         .confetti { position: absolute; background-color: var(--dark); width: 4px; height: 15px; border-radius: 4px; }
         .c1 { top: 15px; left: -25px; transform: rotate(40deg); } .c2 { top: 40px; left: -15px; transform: rotate(-30deg); width: 6px; height: 10px;} .c3 { top: 90px; left: -20px; transform: rotate(15deg); } .c4 { top: 70%; right: -20px; transform: rotate(-25deg); } .c5 { top: 50%; right: -10px; transform: rotate(45deg); width: 5px; height: 12px; }
 
@@ -879,7 +876,8 @@
         .admin-product-list { display: flex; flex-direction: column; gap: 10px; }
         .admin-product-item { display: flex; align-items: center; gap: 10px; background: var(--cream); padding: 10px; border: 2px solid var(--dark); border-radius: 14px; box-shadow: 2.5px 2.5px 0px var(--dark); }
         .admin-product-item.active-edit { background-color: #FFF4B8; border-color: var(--green); }
-        .admin-product-item.is-soldout { opacity: 0.76; background-color: #EFECE4; }
+        .admin-product-item.is-soldout { opacity: 0.78; background-color: #EFECE4; }
+        .admin-product-item.is-hidden-item { border-style: dashed; background-color: #F4EFE6; }
         .admin-product-item img { width: 54px; height: 54px; aspect-ratio: 1 / 1; border-radius: 10px; object-fit: cover; border: 2px solid var(--dark); flex-shrink: 0; }
         .admin-prod-meta { flex: 1; min-width: 0; }
         .admin-prod-meta strong { display: block; font-family: 'Lilita One', cursive; font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -920,8 +918,10 @@
 
         .admin-item-actions { display: flex; flex-direction: column; gap: 5px; flex-shrink: 0; }
         .admin-item-row-btns { display: flex; gap: 5px; }
-        .btn-stock { background: var(--green); color: #FFF; border: 2px solid var(--dark); border-radius: 8px; padding: 4px 8px; cursor: pointer; font-family: 'Lilita One', cursive; font-size: 0.76rem; width: 100%; }
+        .btn-stock { background: var(--green); color: #FFF; border: 2px solid var(--dark); border-radius: 8px; padding: 4px 8px; cursor: pointer; font-family: 'Lilita One', cursive; font-size: 0.75rem; width: 100%; }
         .btn-stock.out { background: #777; color: #FFF; }
+        .btn-vis { background: #FFF; color: var(--dark); border: 2px solid var(--dark); border-radius: 8px; padding: 4px 8px; cursor: pointer; font-family: 'Lilita One', cursive; font-size: 0.75rem; width: 100%; }
+        .btn-vis.hidden-state { background: var(--choco); color: #FFF; }
         .btn-edit { background: var(--yellow); color: var(--dark); border: 2px solid var(--dark); border-radius: 8px; padding: 5px 10px; cursor: pointer; font-family: 'Lilita One', cursive; font-size: 0.8rem; transition: 0.15s; }
         .btn-edit:hover { background: var(--pink); }
         .btn-remove { background: #E63946; color: white; border: 2px solid var(--dark); border-radius: 8px; padding: 5px 10px; cursor: pointer; font-family: 'Lilita One', cursive; font-size: 0.8rem; transition: 0.15s; }
@@ -1232,6 +1232,47 @@
         }
         .btn-toggle-store.closed { background-color: #E63946; color: #FFF; }
 
+        /* Caixa de Horário de Funcionamento */
+        .schedule-box {
+            background-color: var(--cream);
+            border: 2px solid var(--dark);
+            border-radius: 14px;
+            padding: 12px;
+            margin-bottom: 14px;
+        }
+        .schedule-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .schedule-header-row label {
+            font-family: 'Lilita One', cursive;
+            font-size: 0.98rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .schedule-header-row input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--green);
+            cursor: pointer;
+        }
+        .schedule-times-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .schedule-times-grid .admin-form-group {
+            margin-bottom: 0;
+        }
+        .schedule-times-grid input[type="time"] {
+            background-color: #FFF;
+        }
+
         .login-box { text-align: center; padding: 18px 8px; }
         .login-box h3 { margin-bottom: 8px; font-size: 1.6rem; }
         .login-box p { font-size: 0.95rem; font-weight: 600; color: #555; margin-bottom: 20px; }
@@ -1285,8 +1326,7 @@
                 margin-top: 0;
             }
             .hero-title { font-size: 3.6rem; margin-bottom: 14px; }
-            .hero-desc { font-size: 1.05rem; max-width: 95%; margin: 0 auto 22px auto; }
-            .hero-buttons { justify-content: center; gap: 12px; }
+            .hero-desc { font-size: 1.05rem; max-width: 95%; margin: 0 auto 8px auto; }
 
             .hero-right {
                 width: 100%;
@@ -1352,13 +1392,13 @@
                 box-shadow: 2px 2px 0px var(--dark);
             }
             .nav-links {
-                gap: 6px;
-                justify-content: space-between;
+                gap: 8px;
+                justify-content: center;
                 padding-bottom: 2px;
             }
             .nav-links a {
-                font-size: 0.78rem;
-                padding: 6px 11px;
+                font-size: 0.84rem;
+                padding: 6px 14px;
                 box-shadow: 2px 2px 0px var(--dark);
             }
 
@@ -1377,13 +1417,9 @@
             .hero-desc {
                 font-size: 0.95rem;
                 line-height: 1.45;
-                margin-bottom: 18px;
+                margin-bottom: 6px;
             }
-            .hero-buttons {
-                justify-content: center;
-                gap: 10px;
-            }
-            .btn-pink-hero, .btn-outline-hero {
+            .btn-pink-hero {
                 padding: 10px 18px;
                 font-size: 0.92rem;
                 box-shadow: 2.5px 2.5px 0px var(--dark);
@@ -1531,14 +1567,13 @@
                 font-size: 1.35rem;
             }
             .admin-role-badge {
-                display: none !important; /* Libera espaço limpo no cabeçalho mobile */
+                display: none !important;
             }
             .btn-logout-admin {
                 padding: 6px 12px;
                 font-size: 0.85rem;
             }
 
-            /* Navegação em grade 3x2 visível sem precisar arrastar de lado */
             .admin-tabs {
                 display: grid !important;
                 grid-template-columns: repeat(3, 1fr);
@@ -1595,15 +1630,17 @@
             }
             .admin-item-actions {
                 flex-direction: row;
+                flex-wrap: wrap;
                 width: 100%;
                 margin-top: 4px;
             }
-            .btn-stock {
+            .btn-stock, .btn-vis {
                 flex: 1;
+                min-width: 110px;
                 padding: 6px 8px;
             }
             .admin-item-row-btns {
-                flex: 1;
+                width: 100%;
             }
             .admin-item-row-btns button {
                 flex: 1;
@@ -1614,7 +1651,7 @@
         @media (max-width: 360px) {
             .hero-title { font-size: 2.25rem; }
             .logo-img { width: 108px; }
-            .nav-links a { font-size: 0.72rem; padding: 5px 8px; }
+            .nav-links a { font-size: 0.76rem; padding: 5px 10px; }
             .kpi-grid-4 { grid-template-columns: 1fr; }
             .admin-tab-btn { font-size: 0.72rem; padding: 7px 4px; }
         }
@@ -1632,7 +1669,6 @@
             <nav class="nav-links">
                 <a href="#inicio">Início</a>
                 <a href="#cardapio">Cardápio</a>
-                <a href="#cardapio">Encomendas</a>
                 <a href="#sobre">Sobre</a>
             </nav>
             <div class="header-actions">
@@ -1672,10 +1708,6 @@
                     <span class="pill-yellow" id="hero-line-4">sorrir!</span>
                 </h1>
                 <p class="hero-desc" id="hero-desc-text">Receitas artesanais, recheios irresistíveis e momentos que merecem um sabor especial.</p>
-                <div class="hero-buttons">
-                    <a href="#cardapio" class="btn-pink-hero">Ver cardápio →</a>
-                    <a href="#cardapio" class="btn-outline-hero">Fazer encomenda</a>
-                </div>
             </div>
 
             <div class="hero-right">
@@ -2098,19 +2130,28 @@ Cada fornada de brownies e cookies é preparada artesanalmente por mim, pensando
                                 </div>
                             </div>
                             <div style="margin-top: -8px; margin-bottom: 14px;">
-                                <span class="edit-hint">Controle exclusivo do painel (clientes não veem a quantidade). Ao zerar, fica Esgotado automaticamente.</span>
+                                <span class="edit-hint">Controle exclusivo do painel (clientes não veem a quantidade). Ao zerar, fica Indisponível automaticamente até renovar o estoque.</span>
                             </div>
 
-                            <div class="admin-form-group">
-                                <label>Selo Indicador</label>
-                                <select id="prod-badge-select">
-                                    <option value="none">Sem selo</option>
-                                    <option value="Mais vendido|b-green">Mais vendido (Verde)</option>
-                                    <option value="Novidade|b-pink">Novidade (Rosa)</option>
-                                    <option value="Especial|b-yellow">Especial (Amarelo)</option>
-                                    <option value="Edição limitada|b-red">Edição limitada (Vermelho)</option>
-                                    <option value="Sabor da Semana|b-mustard">Sabor da Semana</option>
-                                </select>
+                            <div style="display: flex; gap: 10px;">
+                                <div class="admin-form-group" style="flex: 1;">
+                                    <label>Selo Indicador</label>
+                                    <select id="prod-badge-select">
+                                        <option value="none">Sem selo</option>
+                                        <option value="Mais vendido|b-green">Mais vendido (Verde)</option>
+                                        <option value="Novidade|b-pink">Novidade (Rosa)</option>
+                                        <option value="Especial|b-yellow">Especial (Amarelo)</option>
+                                        <option value="Edição limitada|b-red">Edição limitada (Vermelho)</option>
+                                        <option value="Sabor da Semana|b-mustard">Sabor da Semana</option>
+                                    </select>
+                                </div>
+                                <div class="admin-form-group" style="flex: 1;">
+                                    <label>Exibição no Site</label>
+                                    <select id="prod-visibility-select">
+                                        <option value="visible">👁️ Visível no cardápio</option>
+                                        <option value="hidden">🙈 Ocultar do cardápio</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="admin-form-group">
@@ -2133,7 +2174,7 @@ Cada fornada de brownies e cookies é preparada artesanalmente por mim, pensando
                                 <span>📋 Itens no Cardápio</span>
                                 <small id="admin-total-products" style="font-size: 0.85rem; color: #555;"></small>
                             </div>
-                            <input type="text" class="admin-search-input" id="admin-search-input" placeholder="🔍 Buscar produto para editar ou ajustar estoque..." oninput="renderProducts()">
+                            <input type="text" class="admin-search-input" id="admin-search-input" placeholder="🔍 Buscar produto para editar, ocultar ou ajustar estoque..." oninput="renderProducts()">
                             <div class="admin-product-list" id="admin-product-list"></div>
                         </div>
                     </div>
@@ -2258,14 +2299,35 @@ momentos!"></textarea>
                         <!-- COLUNA DIREITA: OPERAÇÃO DA LOJA + SEGURANÇA/ACESSO + BACKUP -->
                         <div style="display: flex; flex-direction: column; gap: 18px;">
                             <div class="admin-card-box">
-                                <div class="admin-section-title">🏪 Operação da Loja</div>
+                                <div class="admin-section-title">🏪 Operação & Horário da Loja</div>
                                 
                                 <div class="store-status-row">
                                     <div>
                                         <span id="store-status-label">Status: Loja Aberta</span>
-                                        <small style="display: block; color: #555; font-weight: 600;">Controla o recebimento de novos pedidos</small>
+                                        <small id="store-status-sub" style="display: block; color: #555; font-weight: 600;">Controla o recebimento de novos pedidos</small>
                                     </div>
                                     <button class="btn-toggle-store" id="btn-toggle-store" onclick="toggleStoreOpen()">Aberta</button>
+                                </div>
+
+                                <!-- HORÁRIO DE FUNCIONAMENTO -->
+                                <div class="schedule-box">
+                                    <div class="schedule-header-row">
+                                        <label for="store-use-schedule">
+                                            <input type="checkbox" id="store-use-schedule">
+                                            ⏰ Ativar horário de funcionamento
+                                        </label>
+                                    </div>
+                                    <div class="schedule-times-grid">
+                                        <div class="admin-form-group">
+                                            <label>Abre às</label>
+                                            <input type="time" id="store-open-time" value="09:00">
+                                        </div>
+                                        <div class="admin-form-group">
+                                            <label>Fecha às</label>
+                                            <input type="time" id="store-close-time" value="18:00">
+                                        </div>
+                                    </div>
+                                    <span class="edit-hint" style="display: block; margin-top: 6px;">Após o horário de fechamento, os pedidos ficam bloqueados automaticamente até a próxima abertura.</span>
                                 </div>
 
                                 <div class="admin-form-group">
@@ -2364,11 +2426,11 @@ momentos!"></textarea>
         };
 
         const defaultProducts = [
-            { id: "cookie-classico", name: "Cookie Clássico", desc: "Massa de baunilha com gotas de chocolate belga.", price: 12.90, img: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80", badge: "Mais vendido", badgeColor: "b-green", available: true, stock: null },
-            { id: "cookie-nutella", name: "Cookie de Nutella", desc: "Recheio generoso, derrete na boca.", price: 14.90, img: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=400&q=80", badge: "Novidade", badgeColor: "b-pink", available: true, stock: null },
-            { id: "cookie-pistache", name: "Cookie de Pistache", desc: "Recheio cremoso de pistache e toque de chocolate branco.", price: 15.90, img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80", badge: "Especial", badgeColor: "b-yellow", available: true, stock: null },
-            { id: "cookie-red-velvet", name: "Cookie Red Velvet", desc: "Massa vermelha com chocolate branco.", price: 14.90, img: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=400&q=80", badge: "Edição limitada", badgeColor: "b-red", available: true, stock: null },
-            { id: "cookie-caramelo", name: "Cookie de Caramelo", desc: "Caramelo artesanal e gotas de chocolate.", price: 14.90, img: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=400&q=80", badge: "Sabor da Semana", badgeColor: "b-mustard", available: true, stock: null }
+            { id: "cookie-classico", name: "Cookie Clássico", desc: "Massa de baunilha com gotas de chocolate belga.", price: 12.90, img: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80", badge: "Mais vendido", badgeColor: "b-green", available: true, stock: null, hidden: false },
+            { id: "cookie-nutella", name: "Cookie de Nutella", desc: "Recheio generoso, derrete na boca.", price: 14.90, img: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=400&q=80", badge: "Novidade", badgeColor: "b-pink", available: true, stock: null, hidden: false },
+            { id: "cookie-pistache", name: "Cookie de Pistache", desc: "Recheio cremoso de pistache e toque de chocolate branco.", price: 15.90, img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80", badge: "Especial", badgeColor: "b-yellow", available: true, stock: null, hidden: false },
+            { id: "cookie-red-velvet", name: "Cookie Red Velvet", desc: "Massa vermelha com chocolate branco.", price: 14.90, img: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=400&q=80", badge: "Edição limitada", badgeColor: "b-red", available: true, stock: null, hidden: false },
+            { id: "cookie-caramelo", name: "Cookie de Caramelo", desc: "Caramelo artesanal e gotas de chocolate.", price: 14.90, img: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=400&q=80", badge: "Sabor da Semana", badgeColor: "b-mustard", available: true, stock: null, hidden: false }
         ];
 
         /* ==========================================
@@ -2379,10 +2441,17 @@ momentos!"></textarea>
             ...defaultAdminAuth,
             ...(JSON.parse(localStorage.getItem('tb_admin_auth')) || {})
         };
+        let hiddenProductIds = JSON.parse(localStorage.getItem('tb_hidden_products')) || [];
         let products = [...defaultProducts];
         let cart = JSON.parse(localStorage.getItem('tb_cart')) || [];
         let ordersHistory = [];
-        let storeSettings = { whatsapp: "5511999999999", storeOpen: true };
+        let storeSettings = {
+            whatsapp: "5511999999999",
+            storeOpen: true,
+            useSchedule: false,
+            openTime: "09:00",
+            closeTime: "18:00"
+        };
         let heroTexts = { ...defaultHeroTexts };
         let heroImgUrl = DEFAULT_HERO_IMG;
         let aboutData = { ...defaultAboutData };
@@ -2461,6 +2530,8 @@ momentos!"></textarea>
            SINCRONIZAÇÃO COM O SUPABASE
            ========================================== */
         function normalizeProduct(p) {
+            const stockVal = (p.stock !== undefined && p.stock !== null && p.stock !== '') ? Number(p.stock) : null;
+            const availVal = p.available !== false && (stockVal === null || stockVal > 0);
             return {
                 id: p.id,
                 name: p.name,
@@ -2469,9 +2540,17 @@ momentos!"></textarea>
                 img: p.img || DEFAULT_PRODUCT_IMG,
                 badge: p.badge || null,
                 badgeColor: p.badgeColor || '',
-                available: p.available !== false,
-                stock: (p.stock !== undefined && p.stock !== null && p.stock !== '') ? Number(p.stock) : null
+                available: availVal,
+                stock: stockVal,
+                hidden: Boolean(p.hidden) || hiddenProductIds.includes(p.id)
             };
+        }
+
+        function applyHiddenFlagsToProducts() {
+            products = products.map(p => ({
+                ...p,
+                hidden: hiddenProductIds.includes(p.id)
+            }));
         }
 
         function normalizeOrder(o) {
@@ -2498,10 +2577,6 @@ momentos!"></textarea>
                     sb.from('site_settings').select('*')
                 ]);
 
-                if (!prodRes.error && Array.isArray(prodRes.data) && prodRes.data.length > 0) {
-                    products = prodRes.data.map(normalizeProduct);
-                }
-
                 if (!settingsRes.error && Array.isArray(settingsRes.data)) {
                     settingsRes.data.forEach(row => {
                         if (row.key === 'storeSettings' && row.value) {
@@ -2515,9 +2590,17 @@ momentos!"></textarea>
                         } else if (row.key === 'adminAuth' && row.value && row.value.user && row.value.pass) {
                             adminAuth = { ...defaultAdminAuth, ...row.value };
                             localStorage.setItem('tb_admin_auth', JSON.stringify(adminAuth));
+                        } else if (row.key === 'hiddenProducts' && Array.isArray(row.value)) {
+                            hiddenProductIds = row.value;
+                            localStorage.setItem('tb_hidden_products', JSON.stringify(hiddenProductIds));
                         }
                     });
                 }
+
+                if (!prodRes.error && Array.isArray(prodRes.data) && prodRes.data.length > 0) {
+                    products = prodRes.data.map(normalizeProduct);
+                }
+                applyHiddenFlagsToProducts();
             } catch (err) {
                 console.warn("Aviso ao carregar dados iniciais do Supabase:", err);
             }
@@ -2559,6 +2642,7 @@ momentos!"></textarea>
                     const { data } = await sb.from('products').select('*').order('created_at', { ascending: true });
                     if (Array.isArray(data)) {
                         products = data.map(normalizeProduct);
+                        applyHiddenFlagsToProducts();
                         syncCartWithStock();
                         renderProducts();
                     }
@@ -2579,10 +2663,17 @@ momentos!"></textarea>
                                 adminAuth = { ...defaultAdminAuth, ...row.value };
                                 localStorage.setItem('tb_admin_auth', JSON.stringify(adminAuth));
                             }
+                            if (row.key === 'hiddenProducts' && Array.isArray(row.value)) {
+                                hiddenProductIds = row.value;
+                                localStorage.setItem('tb_hidden_products', JSON.stringify(hiddenProductIds));
+                            }
                         });
+                        applyHiddenFlagsToProducts();
                         applyHeroTextsUI();
                         applyAboutUI();
                         applyStoreSettingsUI();
+                        syncCartWithStock();
+                        renderProducts();
                     }
                 })
                 .on('postgres_changes', { event: '*', schema: 'public', table: 'orders' }, async () => {
@@ -2745,6 +2836,55 @@ momentos!"></textarea>
         }
 
         /* ==========================================
+           CONTROLE DE HORÁRIO DE FUNCIONAMENTO
+           ========================================== */
+        function getStoreOpenStatus() {
+            if (!storeSettings.storeOpen) {
+                return {
+                    open: false,
+                    reason: 'manual',
+                    message: '⏸️ Fornada pausada no momento — voltamos em breve!',
+                    btnText: 'Loja fechada no momento'
+                };
+            }
+
+            if (storeSettings.useSchedule && storeSettings.openTime && storeSettings.closeTime) {
+                const now = new Date();
+                const currentMinutes = now.getHours() * 60 + now.getMinutes();
+                const [openH, openM] = storeSettings.openTime.split(':').map(Number);
+                const [closeH, closeM] = storeSettings.closeTime.split(':').map(Number);
+
+                if (!isNaN(openH) && !isNaN(openM) && !isNaN(closeH) && !isNaN(closeM)) {
+                    const openMinutes = openH * 60 + openM;
+                    const closeMinutes = closeH * 60 + closeM;
+
+                    let withinHours = false;
+                    if (openMinutes <= closeMinutes) {
+                        withinHours = currentMinutes >= openMinutes && currentMinutes < closeMinutes;
+                    } else {
+                        withinHours = currentMinutes >= openMinutes || currentMinutes < closeMinutes;
+                    }
+
+                    if (!withinHours) {
+                        return {
+                            open: false,
+                            reason: 'schedule',
+                            message: `⏰ Fora do horário de funcionamento (${storeSettings.openTime} às ${storeSettings.closeTime}) — voltamos em breve!`,
+                            btnText: `Fechado (Abre às ${storeSettings.openTime})`
+                        };
+                    }
+                }
+            }
+
+            return {
+                open: true,
+                reason: 'open',
+                message: '',
+                btnText: 'Finalizar Pedido →'
+            };
+        }
+
+        /* ==========================================
            CONTROLE DE ESTOQUE & DISPONIBILIDADE
            ========================================== */
         function isProductAvailable(p) {
@@ -2757,7 +2897,7 @@ momentos!"></textarea>
             let cartModified = false;
             cart = cart.reduce((acc, cItem) => {
                 const prod = products.find(p => p.id === cItem.id);
-                if (!prod || !isProductAvailable(prod)) {
+                if (!prod || prod.hidden || !isProductAvailable(prod)) {
                     cartModified = true;
                     return acc;
                 }
@@ -2797,37 +2937,62 @@ momentos!"></textarea>
             const banner = document.getElementById('store-closed-banner');
             const toggleBtn = document.getElementById('btn-toggle-store');
             const statusLabel = document.getElementById('store-status-label');
+            const statusSub = document.getElementById('store-status-sub');
             const whatsappInput = document.getElementById('store-whatsapp');
             const adminUserInput = document.getElementById('settings-admin-user');
+            const useSchedCheckbox = document.getElementById('store-use-schedule');
+            const openTimeInput = document.getElementById('store-open-time');
+            const closeTimeInput = document.getElementById('store-close-time');
 
             whatsappInput.value = storeSettings.whatsapp || "";
-            if (adminUserInput) {
-                adminUserInput.value = adminAuth.user || "admin";
+            if (adminUserInput) adminUserInput.value = adminAuth.user || "admin";
+            if (useSchedCheckbox) useSchedCheckbox.checked = Boolean(storeSettings.useSchedule);
+            if (openTimeInput) openTimeInput.value = storeSettings.openTime || "09:00";
+            if (closeTimeInput) closeTimeInput.value = storeSettings.closeTime || "18:00";
+
+            const storeStatus = getStoreOpenStatus();
+
+            if (storeStatus.open) {
+                banner.classList.remove('visible');
+            } else {
+                banner.textContent = storeStatus.message;
+                banner.classList.add('visible');
             }
 
             if (storeSettings.storeOpen) {
-                banner.classList.remove('visible');
                 toggleBtn.textContent = "Aberta";
                 toggleBtn.classList.remove('closed');
-                statusLabel.textContent = "Status: Loja Aberta";
+                if (storeStatus.reason === 'schedule') {
+                    statusLabel.textContent = "Status: Fechada (Fora do horário)";
+                    if (statusSub) statusSub.textContent = `Horário configurado: ${storeSettings.openTime} às ${storeSettings.closeTime}`;
+                } else {
+                    statusLabel.textContent = "Status: Loja Aberta";
+                    if (statusSub) statusSub.textContent = storeSettings.useSchedule
+                        ? `Horário ativo: ${storeSettings.openTime} às ${storeSettings.closeTime}`
+                        : "Recebendo pedidos normalmente";
+                }
             } else {
-                banner.classList.add('visible');
                 toggleBtn.textContent = "Fechada";
                 toggleBtn.classList.add('closed');
                 statusLabel.textContent = "Status: Loja Fechada";
+                if (statusSub) statusSub.textContent = "Pedidos pausados manualmente";
             }
+
             renderCart();
         }
 
         function renderProducts() {
-            productsGrid.innerHTML = products.map(p => {
+            // Na vitrine principal, exibe apenas os itens NÃO ocultos
+            const visibleProducts = products.filter(p => !p.hidden);
+
+            productsGrid.innerHTML = visibleProducts.map(p => {
                 const available = isProductAvailable(p);
                 return `
                 <div class="product-card ${!available ? 'sold-out' : ''}">
                     <div>
                         <div class="card-thumbnail-box">
                             ${!available 
-                                ? `<span class="product-badge b-soldout">Esgotado</span>` 
+                                ? `<span class="product-badge b-soldout">Indisponível</span>` 
                                 : (p.badge ? `<span class="product-badge ${p.badgeColor}">${p.badge}</span>` : '')
                             }
                             <img src="${p.img}" alt="${p.name}">
@@ -2842,7 +3007,7 @@ momentos!"></textarea>
                         <button class="add-cart-btn" 
                             ${!available ? 'disabled' : ''}
                             data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-img="${p.img}" 
-                            aria-label="${available ? 'Adicionar ao carrinho' : 'Produto esgotado'}">
+                            aria-label="${available ? 'Adicionar ao carrinho' : 'Produto indisponível'}">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                         </button>
                     </div>
@@ -2853,10 +3018,14 @@ momentos!"></textarea>
             const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
             const filtered = products.filter(p => p.name.toLowerCase().includes(query));
 
-            document.getElementById('admin-total-products').textContent = `${products.length} itens`;
+            const hiddenCount = products.filter(p => p.hidden).length;
+            document.getElementById('admin-total-products').textContent = hiddenCount > 0
+                ? `${products.length} itens (${hiddenCount} oculto${hiddenCount > 1 ? 's' : ''})`
+                : `${products.length} itens`;
 
             adminProductList.innerHTML = filtered.map(p => {
                 const available = isProductAvailable(p);
+                const isHidden = Boolean(p.hidden);
                 const hasNumericStock = typeof p.stock === 'number';
                 const stockHtml = hasNumericStock
                     ? `<div class="admin-stock-row ${p.stock === 0 ? 'zero' : ''}">
@@ -2867,7 +3036,7 @@ momentos!"></textarea>
                     : `<div class="admin-stock-row"><span>📦 Estoque: Livre</span></div>`;
 
                 return `
-                <div class="admin-product-item ${editingProductId === p.id ? 'active-edit' : ''} ${!available ? 'is-soldout' : ''}">
+                <div class="admin-product-item ${editingProductId === p.id ? 'active-edit' : ''} ${!available ? 'is-soldout' : ''} ${isHidden ? 'is-hidden-item' : ''}">
                     <img src="${p.img}" alt="${p.name}">
                     <div class="admin-prod-meta">
                         <strong>${p.name}</strong>
@@ -2876,7 +3045,10 @@ momentos!"></textarea>
                     </div>
                     <div class="admin-item-actions">
                         <button class="btn-stock ${!available ? 'out' : ''}" onclick="toggleProductStock('${p.id}')">
-                            ${available ? '● Disponível' : '○ Esgotado'}
+                            ${available ? '● Disponível' : '○ Indisponível'}
+                        </button>
+                        <button class="btn-vis ${isHidden ? 'hidden-state' : ''}" onclick="toggleProductVisibility('${p.id}')">
+                            ${isHidden ? '🙈 Oculto do site' : '👁️ Visível no site'}
                         </button>
                         <div class="admin-item-row-btns">
                             <button class="btn-edit" onclick="editProduct('${p.id}')">Editar</button>
@@ -2889,7 +3061,7 @@ momentos!"></textarea>
             const optionsHtml = products.map(p => {
                 const avail = isProductAvailable(p);
                 const stockSuffix = typeof p.stock === 'number' ? ` [Est: ${p.stock}]` : '';
-                return `<option value="${p.id}">${p.name} (${formatBRL(p.price)})${stockSuffix}${!avail ? ' - ESGOTADO' : ''}</option>`;
+                return `<option value="${p.id}">${p.name} (${formatBRL(p.price)})${stockSuffix}${!avail ? ' - INDISPONÍVEL' : ''}</option>`;
             }).join('');
             const pdvSelect = document.getElementById('pdv-product-select');
             if (pdvSelect) pdvSelect.innerHTML = optionsHtml;
@@ -2947,8 +3119,8 @@ momentos!"></textarea>
 
         function addToCart(id, name, price, img) {
             const prod = products.find(p => p.id === id);
-            if (prod && !isProductAvailable(prod)) {
-                showToast("Este sabor acabou de esgotar! \u{1F97A}");
+            if (!prod || prod.hidden || !isProductAvailable(prod)) {
+                showToast("Este sabor está indisponível no momento! \u{1F97A}");
                 return;
             }
 
@@ -2998,9 +3170,10 @@ momentos!"></textarea>
 
             if (fieldsBox) fieldsBox.style.display = 'flex';
 
-            if (!storeSettings.storeOpen) {
+            const storeStatus = getStoreOpenStatus();
+            if (!storeStatus.open) {
                 checkoutBtn.disabled = true;
-                checkoutBtn.textContent = "Loja fechada no momento";
+                checkoutBtn.textContent = storeStatus.btnText;
             } else {
                 checkoutBtn.disabled = false;
                 checkoutBtn.textContent = "Finalizar Pedido →";
@@ -3028,11 +3201,15 @@ momentos!"></textarea>
         });
 
         checkoutBtn.addEventListener('click', () => {
-            if (cart.length === 0 || !storeSettings.storeOpen) return;
+            const storeStatus = getStoreOpenStatus();
+            if (cart.length === 0 || !storeStatus.open) {
+                if (!storeStatus.open) showToast(storeStatus.message);
+                return;
+            }
 
             syncCartWithStock();
             if (cart.length === 0) {
-                showToast("Os itens do carrinho esgotaram no momento.");
+                showToast("Os itens do carrinho ficaram indisponíveis no momento.");
                 return;
             }
 
@@ -3087,7 +3264,12 @@ momentos!"></textarea>
         }
 
         async function confirmAndSendWhatsApp() {
-            if (cart.length === 0 || !storeSettings.storeOpen) return;
+            const storeStatus = getStoreOpenStatus();
+            if (cart.length === 0 || !storeStatus.open) {
+                closeAllModals();
+                if (!storeStatus.open) showToast(storeStatus.message);
+                return;
+            }
 
             const confirmBtn = document.getElementById('confirm-whatsapp-btn');
             confirmBtn.disabled = true;
@@ -3098,7 +3280,7 @@ momentos!"></textarea>
                 if (cart.length === 0) {
                     clearCart();
                     closeAllModals();
-                    showToast("Os itens do carrinho esgotaram no momento.");
+                    showToast("Os itens do carrinho ficaram indisponíveis no momento.");
                     return;
                 }
 
@@ -3165,6 +3347,7 @@ momentos!"></textarea>
                     const { data: refreshedProds } = await sb.from('products').select('*').order('created_at', { ascending: true });
                     if (Array.isArray(refreshedProds) && refreshedProds.length > 0) {
                         products = refreshedProds.map(normalizeProduct);
+                        applyHiddenFlagsToProducts();
                         renderProducts();
                     }
 
@@ -3280,7 +3463,6 @@ momentos!"></textarea>
 
             const expectedUser = (adminAuth.user || "admin").trim().toLowerCase();
 
-            // Usuário ignora maiúsculas/minúsculas; senha diferencia maiúsculas/minúsculas
             if (userInput === expectedUser && passInput === adminAuth.pass) {
                 setAdminLoggedInState(true);
                 switchAdminTab('tab-relatorios');
@@ -3593,7 +3775,7 @@ momentos!"></textarea>
             if (!product) return alert("Selecione um produto válido.");
 
             if (!isProductAvailable(product)) {
-                return alert("Este produto está marcado como Esgotado no estoque!");
+                return alert("Este produto está marcado como Indisponível no estoque!");
             }
             if (typeof product.stock === 'number' && qty > product.stock) {
                 return alert(`Quantidade indisponível! Há apenas ${product.stock} un. em estoque.`);
@@ -3878,7 +4060,7 @@ momentos!"></textarea>
         }
 
         /* ==========================================
-           GESTÃO DE CARDÁPIO, ESTOQUE, CAPA & BACKUP
+           GESTÃO DE CARDÁPIO, ESTOQUE, VISIBILIDADE, CAPA & BACKUP
            ========================================== */
         async function updateHeroImage() {
             const fileInput = document.getElementById('hero-img-upload');
@@ -3919,16 +4101,53 @@ momentos!"></textarea>
 
         async function saveStoreSettings() {
             const whatsapp = document.getElementById('store-whatsapp').value.trim();
+            const useSchedule = document.getElementById('store-use-schedule').checked;
+            const openTime = document.getElementById('store-open-time').value || "09:00";
+            const closeTime = document.getElementById('store-close-time').value || "18:00";
+
             const updated = {
                 ...storeSettings,
-                whatsapp: whatsapp || "5511999999999"
+                whatsapp: whatsapp || "5511999999999",
+                useSchedule,
+                openTime,
+                closeTime
             };
             try {
                 await saveSettingToSupabase('storeSettings', updated);
                 storeSettings = updated;
-                showToast("Configurações salvas! ✅");
+                applyStoreSettingsUI();
+                showToast("Configurações e horário salvos! ✅");
             } catch (err) {
                 alert("Erro ao salvar configurações: " + err.message);
+            }
+        }
+
+        async function setProductHiddenState(productId, shouldHide) {
+            const nextHiddenIds = shouldHide
+                ? Array.from(new Set([...hiddenProductIds, productId]))
+                : hiddenProductIds.filter(id => id !== productId);
+
+            await saveSettingToSupabase('hiddenProducts', nextHiddenIds);
+            hiddenProductIds = nextHiddenIds;
+            localStorage.setItem('tb_hidden_products', JSON.stringify(hiddenProductIds));
+            applyHiddenFlagsToProducts();
+        }
+
+        async function toggleProductVisibility(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+            const nextHidden = !product.hidden;
+
+            try {
+                await setProductHiddenState(id, nextHidden);
+                if (editingProductId === id) {
+                    document.getElementById('prod-visibility-select').value = nextHidden ? 'hidden' : 'visible';
+                }
+                syncCartWithStock();
+                renderProducts();
+                showToast(nextHidden ? `${product.name} ocultado do cardápio! 🙈` : `${product.name} visível no cardápio! 👁️`);
+            } catch (err) {
+                alert("Erro ao alterar visibilidade do item: " + err.message);
             }
         }
 
@@ -3958,7 +4177,7 @@ momentos!"></textarea>
                 document.getElementById('prod-stock').value = nextStock;
             }
             if (nextStock === 0) {
-                showToast(`${products[index].name} zerou e ficou Esgotado!`);
+                showToast(`${products[index].name} zerou e ficou Indisponível!`);
             }
         }
 
@@ -3990,9 +4209,12 @@ momentos!"></textarea>
 
             products[index].available = nextAvailable;
             products[index].stock = nextStock;
+            if (editingProductId === id) {
+                document.getElementById('prod-stock').value = (typeof nextStock === 'number') ? nextStock : '';
+            }
             syncCartWithStock();
             renderProducts();
-            showToast(nextAvailable ? `${products[index].name} disponível!` : `${products[index].name} marcado como esgotado!`);
+            showToast(nextAvailable ? `${products[index].name} disponível!` : `${products[index].name} marcado como indisponível!`);
         }
 
         function editProduct(id) {
@@ -4005,6 +4227,7 @@ momentos!"></textarea>
             document.getElementById('prod-desc').value = product.desc;
             document.getElementById('prod-price').value = product.price;
             document.getElementById('prod-stock').value = (typeof product.stock === 'number') ? product.stock : '';
+            document.getElementById('prod-visibility-select').value = product.hidden ? 'hidden' : 'visible';
             document.getElementById('prod-file').value = '';
             document.getElementById('prod-img-preview').src = product.img;
 
@@ -4030,6 +4253,7 @@ momentos!"></textarea>
             document.getElementById('prod-desc').value = '';
             document.getElementById('prod-price').value = '';
             document.getElementById('prod-stock').value = '';
+            document.getElementById('prod-visibility-select').value = 'visible';
             document.getElementById('prod-file').value = '';
             document.getElementById('prod-badge-select').value = 'none';
             document.getElementById('prod-img-preview').src = DEFAULT_PRODUCT_IMG;
@@ -4051,6 +4275,7 @@ momentos!"></textarea>
             const stockRaw = document.getElementById('prod-stock').value.trim();
             const stock = stockRaw === '' ? null : Math.max(0, parseInt(stockRaw, 10));
             const available = stock === null ? true : stock > 0;
+            const shouldHide = document.getElementById('prod-visibility-select').value === 'hidden';
             
             const badgeSelect = document.getElementById('prod-badge-select').value;
             let badge = null;
@@ -4083,8 +4308,8 @@ momentos!"></textarea>
                     if (!existing) return;
 
                     const finalImg = uploadedImgUrl || existing.img;
-                    const finalAvailable = stock === null ? (existing.available !== false) : (stock > 0);
-                    const updatedRecord = {
+                    const finalAvailable = stock === null ? true : (stock > 0);
+                    const dbRecord = {
                         id: editingProductId,
                         name,
                         desc,
@@ -4096,11 +4321,15 @@ momentos!"></textarea>
                         img: finalImg
                     };
 
-                    const { error } = await sb.from('products').upsert(updatedRecord);
+                    const { error } = await sb.from('products').upsert(dbRecord);
                     if (error) throw error;
 
                     const idx = products.findIndex(p => p.id === editingProductId);
-                    if (idx !== -1) products[idx] = updatedRecord;
+                    if (idx !== -1) {
+                        products[idx] = { ...dbRecord, hidden: shouldHide };
+                    }
+
+                    await setProductHiddenState(editingProductId, shouldHide);
 
                     const cartItem = cart.find(c => c.id === editingProductId);
                     if (cartItem) {
@@ -4113,8 +4342,9 @@ momentos!"></textarea>
                     cancelEdit();
                     showToast("Produto atualizado na nuvem! ✨");
                 } else {
-                    const newRecord = {
-                        id: 'prod-' + Date.now(),
+                    const newId = 'prod-' + Date.now();
+                    const dbRecord = {
+                        id: newId,
                         name,
                         desc,
                         price,
@@ -4125,10 +4355,13 @@ momentos!"></textarea>
                         img: uploadedImgUrl || DEFAULT_PRODUCT_IMG
                     };
 
-                    const { error } = await sb.from('products').insert(newRecord);
+                    const { error } = await sb.from('products').insert(dbRecord);
                     if (error) throw error;
 
-                    products.push(newRecord);
+                    products.push({ ...dbRecord, hidden: shouldHide });
+                    if (shouldHide) {
+                        await setProductHiddenState(newId, true);
+                    }
                     cancelEdit();
                     showToast("Produto adicionado ao cardápio! 🍪");
                 }
@@ -4149,6 +4382,10 @@ momentos!"></textarea>
                 return;
             }
 
+            if (hiddenProductIds.includes(id)) {
+                await setProductHiddenState(id, false);
+            }
+
             if (editingProductId === id) cancelEdit();
             products = products.filter(p => p.id !== id);
             syncCartWithStock();
@@ -4159,6 +4396,7 @@ momentos!"></textarea>
         function exportBackupJSON() {
             const backup = {
                 products,
+                hiddenProductIds,
                 ordersHistory,
                 storeSettings,
                 heroTexts,
@@ -4183,10 +4421,17 @@ momentos!"></textarea>
             reader.onload = async function(e) {
                 try {
                     const data = JSON.parse(e.target.result);
+                    if (Array.isArray(data.hiddenProductIds)) {
+                        hiddenProductIds = data.hiddenProductIds;
+                        localStorage.setItem('tb_hidden_products', JSON.stringify(hiddenProductIds));
+                        await saveSettingToSupabase('hiddenProducts', hiddenProductIds);
+                    }
                     if (Array.isArray(data.products) && data.products.length > 0) {
                         const normalized = data.products.map(normalizeProduct);
-                        await sb.from('products').upsert(normalized);
+                        const dbRecords = normalized.map(({ hidden, ...rest }) => rest);
+                        await sb.from('products').upsert(dbRecords);
                         products = normalized;
+                        applyHiddenFlagsToProducts();
                     }
                     if (Array.isArray(data.ordersHistory) && data.ordersHistory.length > 0) {
                         const normalizedOrders = data.ordersHistory.map(normalizeOrder);
@@ -4244,6 +4489,11 @@ momentos!"></textarea>
             if (sessionStorage.getItem('tb_admin_logged') === 'true') {
                 setAdminLoggedInState(true);
             }
+
+            // Verifica automaticamente o horário de funcionamento a cada 30 segundos
+            setInterval(() => {
+                applyStoreSettingsUI();
+            }, 30000);
 
             setupRealtimeSubscriptions();
         }
